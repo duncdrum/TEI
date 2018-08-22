@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-Copyright TEI Consortium. 
-Dual-licensed under CC-by and BSD2 licences 
+Copyright TEI Consortium.
+Dual-licensed under CC-by and BSD2 licences
 See the file COPYING.txt for details.
 $Date$
 $Id$
@@ -317,8 +317,8 @@ $Id$
 	    <author>Dudo of St Quentin</author>. <title>De moribus et actis primorum Normannie ducum</title>, fol 4v of
 	  British Library MS Harley 3742; in <ptr target="#PARKES"/> pl 6(i). </bibl>
 	  <bibl xml:id="eg-rhyme-dutt">
-	    <author>Dutt, Toru</author>. <title level="a">Lakshman</title> In <title level="m">Ancient Ballads and Legends of Hindustan</title>,  
-	    <publisher>Kegan Paul, Trench &amp; Co.</publisher>, (<date>1882</date>) 
+	    <author>Dutt, Toru</author>. <title level="a">Lakshman</title> In <title level="m">Ancient Ballads and Legends of Hindustan</title>,
+	    <publisher>Kegan Paul, Trench &amp; Co.</publisher>, (<date>1882</date>)
 	  </bibl>
 	  <bibl xml:id="VERH-eg-25"><author>Dylan, Bob</author>. <title level="a">All Along the Watchtower</title> In <title
 	  level="m">John Wesley Harding</title> (<date>1967</date>)</bibl>
@@ -506,7 +506,7 @@ $Id$
 	      <!-- K -->
 	      <bibl xml:id="Karstadt-Distinctiones-Thomistarum"><author>Karlstadt, Andreas Bodenstein</author>.
 	      <title>Distinctiones Thomistarum</title>. <pubPlace>Wittenberg</pubPlace> <date>1507</date>. In <editor>Harald Bollbuck</editor> ed.
-	      <series>Kritische Gesamtausgabe Karlstadt</series> <biblScope unit="volume">I</biblScope>, 
+	      <series>Kritische Gesamtausgabe Karlstadt</series> <biblScope unit="volume">I</biblScope>,
 	      available: <ref target="http://diglib.hab.de/edoc/ed000216/start.htm">http://diglib.hab.de/edoc/ed000216/start.htm</ref>
 	      </bibl>
 	      <bibl xml:id="REF-cb-eg-1"><author>Kersey, John</author>. <title level="m">Dictionarium Anglo-Brittannicum: Or, a
@@ -548,7 +548,7 @@ $Id$
 		<author>Langland, William</author>. <title level="m">The Vision of Piers Plowman</title>. In <editor>A.V.C.
 		Schmidt</editor> ed. <title level="m">Langland: Vision of Piers Plowman: "B" Text</title>, <biblScope
 		unit="part">opening</biblScope>.</bibl>
-		<!-- MDH 2017-04-13 Note: per Andrew Hankinson, there is no way to link directly to an 
+		<!-- MDH 2017-04-13 Note: per Andrew Hankinson, there is no way to link directly to an
 		     image in the new DIAMM site; instead we point to the metadata record. -->
 		<bibl xml:id="punctuseg"><title>Latin liturgical manuscript: Bod MS. Lat liturg. b. 19</title>, folio 4r. Taken
 		from the digitized image described at <ptr target="https://www.diamm.ac.uk/sources/522/"/>.</bibl>
@@ -631,9 +631,9 @@ Papers of the Presidents: 1789-1897</title>, Washington,
 		  </bibl>
 		  <bibl xml:id="CONARS-eg-106">Any issue of the <title level="j">Malawi Daily Times. </title></bibl>
 		  <!-- <bibl xml:id="PH-BIBL-1">
-		       <title level="a">The Manere of Good Lyuynge</ 
+		       <title level="a">The Manere of Good Lyuynge</
 		       title>, fol 126v of Bodleian MS Laud Misc.
-		       517, plate 8(ii) in <title>English Cursive Book  
+		       517, plate 8(ii) in <title>English Cursive Book
 		       Hands 1250– 1500</title> by M. B. Parkes
 		       (Clarendon Press: Oxford, 1969)</bibl> -->
 		  <bibl xml:id="PH-BIBL-1">
@@ -707,7 +707,7 @@ Papers of the Presidents: 1789-1897</title>, Washington,
 		    1992</date>, NERC WP8/WP4 122.</bibl>
 		    <bibl xml:id="CODR-eg-296">
 		      <author>Peacock, Thomas Love</author>. <title level="m">Gryll Grange</title> (<date>1861</date>), <biblScope
-		      unit="chap">chapter 1</biblScope>.</bibl> 
+		      unit="chap">chapter 1</biblScope>.</bibl>
 		      <bibl xml:id="GerStra">
 			<author>Gershwin, Ira</author>
 		      <title>By Strauss</title> (from <title>An American in Paris</title>, <date>1953</date>) </bibl>
@@ -1874,7 +1874,7 @@ Papers of the Presidents: 1789-1897</title>, Washington,
 					  </imprint>
 					</monogr>
 				      </biblStruct>
-				      <biblStruct xml:id="CH-BIBL-3">
+				      <!-- <biblStruct xml:id="CH-BIBL-3">
 					<monogr>
 					  <title>The Unicode Standard, Version 5.0</title>
 					  <ptr target="http://www.unicode.org/"/>
@@ -1884,7 +1884,7 @@ Papers of the Presidents: 1789-1897</title>, Washington,
 					    <date>2006</date>
 					  </imprint>
 					</monogr>
-				      </biblStruct>
+				      </biblStruct> -->
 				      <biblStruct xml:id="CH-BIBL-4">
 					<monogr>
 					  <editor>
@@ -2151,7 +2151,7 @@ Papers of the Presidents: 1789-1897</title>, Washington,
 					  </imprint>
 					</monogr>
 				      </biblStruct>
-				      <!-- <bibl xml:id="TS-BIBL-3">Stig Johansson et al. 
+				      <!-- <bibl xml:id="TS-BIBL-3">Stig Johansson et al.
 					   <title>Working Paper on Spoken Texts,</title>
 					   document TEI AI2 W1, 1991</bibl> -->
 				      <biblStruct xml:id="TS-BIBL-3">
@@ -2288,9 +2288,9 @@ Papers of the Presidents: 1789-1897</title>, Washington,
 					  </imprint>
 					</monogr>
 				      </biblStruct>
-				      <!-- <bibl xml:id="DI-BIBL-4">Nancy Ide and Jean Veronis, 
-					   <title level="a">Encoding Print Dictionaries</title>, 
-					   <title>Computers and the Humanities</title> 29: 
+				      <!-- <bibl xml:id="DI-BIBL-4">Nancy Ide and Jean Veronis,
+					   <title level="a">Encoding Print Dictionaries</title>,
+					   <title>Computers and the Humanities</title> 29:
 					   167–195, 1995</bibl> -->
 				      <biblStruct xml:id="DI-BIBL-4">
 					<analytic>
@@ -5633,9 +5633,9 @@ University.</bibl>
 
 <bibl>Charlong, L. (1998). <ref
 target="http://ultratext.hil.unb.ca/Texts/guidelines/text_guide2.htm"><title>Standards
-and procedures followed at the Electronic Text Centre</title></ref>. 
+and procedures followed at the Electronic Text Centre</title></ref>.
 University of New
-Brunswick Libraries, Canada. Last updated: <date 
+Brunswick Libraries, Canada. Last updated: <date
 when="1998-11-25">25 November 1998</date>. </bibl>
 
 <bibl>Chesnutt, David R., Hockey, Susan M., Sperberg-McQueen,
@@ -5646,7 +5646,7 @@ Documentary Editions</title></ref>. Model Editions Partnership.</bibl>
 <bibl>Driscoll, M.J. ed (2000). <ref
 target="http://www.hum.ku.dk/ami/handbook/"><title>Encoding
 Old Norse-Icelandic primary sources using TEI-conformant SGML/XML: A
-handbook</title></ref>. Last updated <date when="2000-07">July 
+handbook</title></ref>. Last updated <date when="2000-07">July
 2000</date>.</bibl>
 
 <bibl>Elliott, T. et al (2001). <ref
@@ -5661,9 +5661,9 @@ Leiden-style editions to TEI Lite XML</title></ref> (<ref
 target="../Sample_Manuals/leiden.html">local copy</ref>). Last updated
 <date when="2001-06-19">19 June 2001</date>.</bibl>
 
-<bibl>Flanders, J., Mah, C., Caton, P. <ref 
-target="http://www.wwp.brown.edu/encoding/training/index.html"><title>Brown 
-University Women Writers Project Training Materials</title></ref> 
+<bibl>Flanders, J., Mah, C., Caton, P. <ref
+target="http://www.wwp.brown.edu/encoding/training/index.html"><title>Brown
+University Women Writers Project Training Materials</title></ref>
 (includes links to detailed tutorials on
 <ref target="http://www.wwp.brown.edu/encoding/training/teiheader/teiHeader.html"
 ><title>The TEI Header</title></ref>;
@@ -5682,9 +5682,9 @@ University Women Writers Project Training Materials</title></ref>
 updated <date when="2001-09-14">14 September 2001</date>.
 </bibl>
 
-<bibl>Gorman, Peter C., ed (<date when="2000">2000</date>). <ref 
-target="http://www.library.wisc.edu/help/tech/TEI/guidelines.html"><title>Guidelines 
-for markup of electronic texts</title></ref>. University of 
+<bibl>Gorman, Peter C., ed (<date when="2000">2000</date>). <ref
+target="http://www.library.wisc.edu/help/tech/TEI/guidelines.html"><title>Guidelines
+for markup of electronic texts</title></ref>. University of
 Wisconsin-Madison. </bibl>
 
 <bibl>Heiden, S.; Guillot, C; Lavrentiev, A. (2005) <ref
@@ -5692,13 +5692,13 @@ target="http://bfm.ens-lsh.fr/IMG/pdf/Manuel_Encodage_TEI.pdf">Manuel
 d'encodage XML-TEI des textes de la Base de Francais Médiéval</ref></bibl>
 
 <bibl>HTML Writers Guild (2000). <ref
-target="http://gutenberg.hwg.org/teidtds.html"><title>An introduction to 
+target="http://gutenberg.hwg.org/teidtds.html"><title>An introduction to
 the Text Encoding
 Initiative (TEI) DTD</title></ref> (Project Gutenberg's Introduction to using
 TEI). Last updated <date when="2001-02-17">17 February 2001</date>.</bibl>
 
-<bibl>Kushigian, N. and Payne, C. <ref 
-target="http://www.lib.ucdavis.edu/English/BWRP/BWRPveg.htm"><title>British 
+<bibl>Kushigian, N. and Payne, C. <ref
+target="http://www.lib.ucdavis.edu/English/BWRP/BWRPveg.htm"><title>British
 Women Romantic Poets Project: Encoding
 Guidelines</title></ref>. University of California, Davis. </bibl>
 
@@ -5718,8 +5718,8 @@ updated <date when="2001-06-10">10 June 2001</date>.
 <ref target="http://www.hit.uib.no/menota/guidelines/">Preliminary
 English version</ref>. Last updated <date>January 2002</date>.</bibl>
 
-<bibl>Mueller, Martin (<date when="2002">2002</date>). 
-<ref 
+<bibl>Mueller, Martin (<date when="2002">2002</date>).
+<ref
 target="http://bistro.northwestern.edu/AnaServer?tei+0+frame.anv"><title>A
 very gentle introduction to the TEI markup language</title></ref>
 (<ref target="../Sample_Manuals/mueller-index.htm">local copy</ref>).</bibl>
@@ -5735,7 +5735,7 @@ target="../Sample_Manuals/pg-guide-tei.zip">local copy</ref>).</bibl>
 Manuscript Transcription</title></ref>  (<ref
 target="../Sample_Manuals/dsguide1.html">local copy</ref>).</bibl>
 
-<bibl>Scholze, Hannelore and Goldstrassa, Thomas (<date 
+<bibl>Scholze, Hannelore and Goldstrassa, Thomas (<date
 when="2001">2001</date>).
 <ref
 target="http://www2.hu-berlin.de/literatur/projekte/loreley/Teilite/index.htm"><title>TEI
@@ -5744,16 +5744,16 @@ Verführungsszenarien</title></ref>. Prokect Loreley,
 Humboldt-Universität zu Berlin.</bibl>
 
 <bibl>Seaman, D. (<date when="1995">1995</date>).
-<ref target="https://web.archive.org/web/20140804000849/etext.lib.virginia.edu/standards/tei/uvatei.html"><title>The 
+<ref target="https://web.archive.org/web/20140804000849/etext.lib.virginia.edu/standards/tei/uvatei.html"><title>The
 Electronic Text
-Center Introduction to TEI and Guide to Document 
+Center Introduction to TEI and Guide to Document
 Preparation</title></ref>. Electronic
 Text Center, University of Virginia, USA. Last updated: Spring 1995.</bibl>
 
 <bibl>Smith, Natalia, Sexton, Jill and McKim, Joshua.
 <ref target="http://docsouth.unc.edu/guidelines/encoding.html">
 <title>Encoding Guidelines for the Documenting the American
-South database</title></ref>. Last updated <date when="2000-05">May 
+South database</title></ref>. Last updated <date when="2000-05">May
 2000</date>.
 </bibl>
 
@@ -5766,7 +5766,7 @@ copy</ref>.</bibl>
 <bibl>Vanhoutte, Edward (1997). <ref
 target="http://www.kantl.be/ctb/vanhoutte/pub/1998/sgmleditie.htm"><title>...en
 doende denkt dan nog. SGML, TEI en
-editiewetenschap</title></ref>. Last updated <date 
+editiewetenschap</title></ref>. Last updated <date
 when="2001-03-26">26 March 2001</date>.</bibl>
 
 <bibl>Vanhoutte, Edward (2001). <ref
@@ -5784,13 +5784,13 @@ material, version 1.0 </ref>
 
 <bibl>van der Weel, Adriaan et al (<date when="2000">2000</date>). <ref
 target="http://www.etcl.nl/teiguide/default.htm"><title>The ETCL's
-Use of TEI: A Rationale of Standardization</title></ref>. 
+Use of TEI: A Rationale of Standardization</title></ref>.
 Electronic Text Centre, University of Leiden.
 </bibl>
 
 <bibl>Willett, P.
-<ref 
-target="http://www.indiana.edu/~letrs/vwwp/vwwp-about.html"><title>Victorian 
+<ref
+target="http://www.indiana.edu/~letrs/vwwp/vwwp-about.html"><title>Victorian
 Women
 Writers Project Encoding Guidelines</title></ref>. Last updated:
 <date when="2000-05-02">02 May 2000</date>.</bibl>
@@ -5803,9 +5803,9 @@ target="../Sample_Manuals/bestpractice.htm" >local copy</ref>).
 Version 1.0 (<date when="1999-07-30">30 July 1999</date>).</bibl>
 
 <bibl>Willett, P. et al (<date when="2001">2001</date>). <ref
-target="http://www.letrs.indiana.edu/web/w/wrightmrc/guidelines.html"><title>CIC 
-Wright 19th century American Fiction Project: Encoding 
-Guidelines</title></ref> (includes extensive tutorial 
+target="http://www.letrs.indiana.edu/web/w/wrightmrc/guidelines.html"><title>CIC
+Wright 19th century American Fiction Project: Encoding
+Guidelines</title></ref> (includes extensive tutorial
 material).</bibl>
 
 <bibl>Williams, J.P. and Powell, C. (1996, 1998).
