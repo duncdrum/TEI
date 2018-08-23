@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+Copyright TEI Consortium.
+Dual-licensed under CC-by and BSD2 licences
+See the file COPYING.txt for details
+$Date$
+$Id$
+--><?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?><elementSpec xmlns="http://www.tei-c.org/ns/1.0" module="gaiji" xmlns:sch="http://purl.oclc.org/dsdl/schematron" ident="uniHan" xml:id="UNIHAN">
+  <gloss versionDate="2018-08-22" xml:lang="en">uniHan tag name</gloss>
+  <desc versionDate="2018-08-22" xml:lang="en">contains the name of a normative or informative UniHan tag.</desc>
+  <classes>
+    <!-- This seems odd but matches unicodeName -->
+    <memberOf key="att.global"/>
+  </classes>
+  <content>
+    <textNode/>
+    <constraintSpec ident="unihan1" scheme="schematron">
+      <constraint>
+        <!-- more detailed rules could be generated from https://www.unicode.org/reports/tr42/tr42-23.html#d1e3037  -->
+    <sch:assert test=". eq ('kAccountingNumeric', 'kBigFive', 'kCangjie', 'kCantonese', 'kCCCII', 'kCheungBauer', 'kCheungBauerIndex', 'kCihaiT', 'kCNS1986', 'kCNS1992', 'kCompatibilityVariant', 'kCowles', 'kDaeJaweon', 'kDefinition', 'kEACC', 'kFenn', 'kFennIndex', 'kFourCornerCode', 'kFrequency', 'kGB0', 'kGB1', 'kGB3', 'kGB5', 'kGB7', 'kGB8', 'kGradeLevel', 'kGSR', 'kHangul', 'kHanYu', 'kHanyuPinlu', 'kHanyuPinyin', 'kHDZRadBreak', 'kHKGlyph', 'kHKSCS', 'kIBMJapan', 'kIICore', 'kIRG_GSource', 'kIRG_HSource', 'kIRG_JSource', 'kIRG_KPSource', 'kIRG_KSource', 'kIRG_MSource', 'kIRG_TSource', 'kIRG_USource', 'kIRG_VSource', 'kIRGDaeJaweon', 'kIRGDaiKanwaZiten', 'kIRGHanyuDaZidian', 'kIRGKangXi', 'kJa', 'kJapaneseKun', 'kJapaneseOn', 'kJinmeiyoKanji', 'kJis0', 'kJis1', 'kJIS0213', 'kJoyoKanji', 'kKangXi', 'kKarlgren', 'kKorean', 'kKoreanEducationHanja', 'kKoreanName', 'kKPS0', 'kKPS1', 'kKSC0', 'kKSC1', 'kLau', 'kMainlandTelegraph', 'kMandarin', 'kMatthews', 'kMeyerWempe', 'kMorohashi', 'kNelson', 'kOtherNumeric', 'kPhonetic', 'kPrimaryNumeric', 'kPseudoGB1', 'kRSAdobe_Japan1_6', 'kRSJapanese', 'kRSKangXi', 'kRSKanWa', 'kRSKorean', 'kRSUnicode', 'kSBGY', 'kSemanticVariant', 'kSimplifiedVariant', 'kSpecializedSemanticVariant', 'kTaiwanTelegraph', 'kTang', 'kTGH', 'kTotalStrokes', 'kTraditionalVariant', 'kVietnamese', 'kXerox', 'kXHC1983', 'kZVariant')"> This element must contain a string matching a unicode han database property tag name</sch:assert>
+    </constraint>
+    </constraintSpec>
+  </content>
+  <attList>
+    <attDef ident="version" usage="opt">
+      <desc versionDate="2005-01-14" xml:lang="en">specifies the version number of the Unicode Standard in which this property name is
+        defined.</desc>
+      <desc versionDate="2007-12-20" xml:lang="ko">특성명이 정의된 표준 유니코드의 버전 숫자를 명시한다.</desc>
+      <desc versionDate="2007-05-02" xml:lang="zh-TW">說明該性質名稱是定義在哪一版本的統一碼標準 (Unicode Standard) 中。</desc>
+      <desc versionDate="2008-04-05" xml:lang="ja">当該素性名が定義されているユニコードの版番号を示す．</desc>
+      <desc versionDate="2007-06-12" xml:lang="fr">spécifie le numéro de version de la norme Unicode
+        où se trouve défini ce nom de propriété</desc>
+      <desc versionDate="2007-05-04" xml:lang="es">especifica el número de versión del Estándar de
+        Unicode en que este nombre de propiedad se ha definido.</desc>
+      <desc versionDate="2007-01-21" xml:lang="it">specifica il numero della versione dello standard
+        Unicode nel quale è definito il nome della proprietà.</desc>
+      <datatype><dataRef key="teidata.version"/></datatype>
+    </attDef>
+  </attList>
+  <exemplum xml:lang="und">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+      <charProp>
+        <uniHan>kRSKangXi</uniHan>
+        <value>120.5</value>
+      </charProp>
+    </egXML>
+  </exemplum>
+  <remarks versionDate="2018-08-22" xml:lang="en">
+    <p>A definitive list of current Unihan tag names is provided in The Unicode Han Database.</p>
+  </remarks>
+  <listRef>
+    <ptr target="#ucsprops"/>
+  </listRef>
+</elementSpec>

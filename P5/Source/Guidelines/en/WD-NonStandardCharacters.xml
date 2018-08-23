@@ -2,7 +2,7 @@
 <!-- Copyright TEI Consortium. Dual-licensed under CC-by and BSD2 licences See the file COPYING.txt for details. $Date$ $Id$ -->
 <?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <div xmlns="http://www.tei-c.org/ns/1.0" type="div1" xml:id="WD" n="25">
-  <head>Characters, Glyphs, and Writing Systems</head>
+  <head>Characters, Glyphs, and Writing Modes</head>
   <p>Chapter
     <ptr target="#CH"/>
     introduced the fundamental notions of language identification and character representation in an encoded TEI document. In this chapter we discuss some additional issues relating to the way that written language is represented in a TEI document. In
@@ -48,12 +48,12 @@
         </item>
         <item>Check the Proposed New Characters web page (<ptr target="http://unicode.org/alloc/Pipeline.html"/>) to see whether the character is in line for approval.</item>
 
-        <item>Ask on the Unicode email list (<ptr target="http://www.unicode.org/consortium/distlist.html"/>) to see whether a proposal is pending, or to determine whether this character is considered eligible for addition to the Unicode Standard.
+        <item>Ask on the Unicode email list (<ptr target="https://www.unicode.org/consortium/distlist.html"/>) to see whether a proposal is pending, or to determine whether this character is considered eligible for addition to the Unicode Standard.
         </item>
 
       </list>
     </p>
-    <p>Since there are now more than 130,000 characters in Unicode, chances are good that what you need is already there, but it might not be easy to find, since it might have a different name in Unicode. Editors working with ideographic characters, typical for East Asian writing systems, should consult the Unihan Database (<ptr target="https://unicode.org/charts/unihan.html"/>). Look again, this time at other sites, for example <ptr target="http://www.eki.ee/letter/"/> (no CJK) or <ptr target="http://www.chise.org"/> (CJK only), which also provide searches based on scripts and languages. Take care, however, that all the properties of what seems to be a relevant character are consistent with those of the character you are looking for. For example, if your character is definitely a digit, but the properties of the best match you can find for it say that it is a letter, you may have a character not yet defined in Unicode.
+    <p>Since there are now more than 130,000 characters in Unicode, chances are good that what you need is already there, but it might not be easy to find, since it might have a different name in Unicode. Editors working with ideographic characters, typical for East Asian writing systems, should consult the Unihan Database (<ptr target="https://unicode.org/charts/unihan.html"/>). Look again, this time at other sites, for example <ptr target="https://www.eki.ee/letter/"/> (no CJK) or <ptr target="https://www.chise.org"/> (CJK only), which also provide searches based on scripts and languages. Take care, however, that all the properties of what seems to be a relevant character are consistent with those of the character you are looking for. For example, if your character is definitely a digit, but the properties of the best match you can find for it say that it is a letter, you may have a character not yet defined in Unicode.
     </p>
     <p>In general, it is advisable to avoid Unicode characters generally described as presentation forms.<note place="bottom">Specifically, characters in the Unicode blocks Alphabetic Presentation Forms, Arabic Presentation Forms-A, Arabic Presentation Forms-B, Letterlike Symbols, and Number Forms.</note>
       However, if the character you are looking for is being used in a notation (rather than as part of the orthography of a language) then it is quite acceptable to select characters from the Mathematical Operators block, provided that they have the
@@ -67,7 +67,7 @@
     <p>If, however, no suitable form of your character exists, the next question will be:
       <q>Does the graphical unit in question represent a variant form of a known character, or does it represent a completely unencoded character?</q>
       If the character is determined to be missing from the Unicode Standard, it would be helpful to submit the new character for inclusion (see
-      <ptr target="http://unicode.org/pending/proposals.html"/>). The markup elements introduces in this section should form a solid basis for preparing a structured proposal for addition to the standard.
+      <ptr target="https://unicode.org/pending/proposals.html"/>). The markup elements introduces in this section should form a solid basis for preparing a structured proposal for addition to the standard.
     </p>
     <p>These guidelines will help you proceed once you have identified a given graphical unit as either a variant or an unencoded character. Determining this will require knowledge of the contents of the document that you have. The first case will be called
       <emph>annotation</emph>
@@ -297,18 +297,18 @@
         <ref target="#CH-eg-02">Freytag (2006)</ref>.</p>
       <p>The
         <gi>charProp</gi>
-        element allows an encoder to supply information about a character or glyph. Where the information concerned relates to a property which has already been identified in the Unicode Standard, encoders are urged to use the appropriate Unicode property
-        name.
+        element allows an encoder to supply information about a character or glyph. Where the information concerned relates to a property which has already been identified in the Unicode Standard, encoders are urged to use the appropriate Unicode property name. In the case of East Asian characters, additional character properties can be drawn from the list of existing uniHan Database properties defined by the <ref target="http://www.unicode.org/reports/tr38/">Unicode Standard Annex #38, “Unicode Han Database (Unihan)"</ref>.
       </p>
       <p>The following elements are used to record character properties:
         <specList>
           <specDesc key="unicodeName"/>
+          <specDesc key="uniHan"/>
           <specDesc key="localName"/>
           <specDesc key="value"/>
         </specList>
         For each property, the encoder must supply either a
-        <gi>unicodeName</gi>
-        or a
+        <gi>unicodeName</gi>, a
+        <gi>uniHan</gi> or a
         <gi>localName</gi>, followed by a
         <gi>value</gi>.
       </p>
@@ -623,8 +623,7 @@
             </table>
           </item>
           <label>canonical-combining-class</label>
-          <item>This property exists for characters that are not used independently, but in combination with other characters, for example the strokes making up CJK (Chinese, Japanese, and Korean) characters. It records a class for these characters, which is
-            used to determine how they interact typographically. The following values are defined in the Unicode Standard: (see
+          <item>This property exists for characters that are not used independently, but in combination with other characters, for example the strokes making up CJK (Chinese, Japanese, and Korean) characters. It records a class for these characters, which is used to determine how they interact typographically. The following values are defined in the Unicode Standard: (see
             <ref target="http://www.unicode.org/reports/tr44/#Canonical_Combining_Class_Values">Unicode Character Database: Canonical Combining Class Values</ref>); these were taken from version 5.0:
             <table>
               <row>
@@ -812,8 +811,7 @@
             </table>
           </item>
           <label>character-decomposition-mapping</label>
-          <item>This property is defined for characters, which may be decomposed, for example to a canonical form plus a typographic variation of some kind. For such characters the Unicode standard specifies both a decomposition type and a decomposition
-            mapping (i.e. another Unicode character to which this one may be mapped in the way specified by the decomposition type). The following types of mapping are defined in the Unicode Standard:
+          <item>This property is defined for characters, which may be decomposed, for example to a canonical form plus a typographic variation of some kind. For such characters the Unicode standard specifies both a decomposition type and a decomposition mapping (i.e. another Unicode character to which this one may be mapped in the way specified by the decomposition type). The following types of mapping are defined in the Unicode Standard:
             <table>
               <row>
                 <cell>
@@ -942,7 +940,7 @@
         </list>
       </p>
       <p>The Unicode Standard also defines a set of informative (but non-normative) properties for Unicode characters. If encoders want to provide such properties, they may be included using the suggested Unicode name, tagged using the
-        <gi>unicodeName</gi>
+        <gi>unicodeName</gi>, or <gi>uniHan</gi>
         element. However, encoders may also supply other locally-defined properties, which must be named using the
         <gi>localName</gi>
         element to distinguish them. If a Unicode name exists for a given property, it should however always be preferred to a locally defined name. Locally defined names should be used only for properties which are not specified by the Unicode Standard.</p>
@@ -1044,13 +1042,10 @@
       </eg>
     </p>
     <!-- should become a choice element some time -->
-    <p>Note however that this technique employs markup objects to provide a link between a character in the document and some annotation on that character. Therefore, it cannot be used in places where such markup constructs are not allowed, notably in
-      attribute values.
+    <p>Note however that this technique employs markup objects to provide a link between a character in the document and some annotation on that character. Therefore, it cannot be used in places where such markup constructs are not allowed, notably in attribute values.
     </p>
 
-    <p>Since the need to use these constructs to annotate or define characters occurs frequently in Chinese, Korean, and Japanese documents, here are some issues that are specific to these documents. There are two slightly different versions of the
-      problem. In the first case, due to the way Unicode is defined, there are occasions when more than one glyph is defined for a character. In such an occasion, one might want to retain the character as used, but add information in a way so that a
-      normalizer (for search or indexing operations) could take advantage of this information. To achieve this, we simply define within a
+    <p>Since the need to use these constructs to annotate or define characters occurs frequently in Chinese, Korean, and Japanese documents, here are some issues that are specific to these documents. There are two slightly different versions of the problem. In the first case, due to the way Unicode is defined, there are occasions when more than one glyph is defined for a character. In such an occasion, one might want to retain the character as used, but add information in a way so that a normalizer (for search or indexing operations) could take advantage of this information. To achieve this, we simply define within a
       <gi>charDecl</gi>
       element a
       <gi>glyph</gi>
