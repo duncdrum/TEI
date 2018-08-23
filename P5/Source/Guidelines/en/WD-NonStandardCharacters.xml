@@ -39,9 +39,9 @@
           <p>Check the Unicode web site at
             <ptr target="https://www.unicode.org"/>, in particular the page
             <ref target="https://unicode.org/standard/where/">"Where is my Character?"</ref>, and the associated character code charts. Alternatively, users can check the latest published version of
-            <ptr target="https://www.unicode.org/publications/">
+            <ref target="https://www.unicode.org/publications/">
               <title>The Unicode Standard</title>
-            </ptr>.</p>
+            </ref>.</p>
           <p>The pictures (<soCalled>glyphs</soCalled>) in the Unicode code charts are only meant to be representative, not definitive. If a specific form of an already encoded character is required for a project, refer to the guidelines contained below under
             <ref target="#D25-30">Annotating Characters</ref>. Remember that your encoded document may be rendered on a system which has different fonts from yours: if the specific form of a character is important to you, then you should document it.
           </p>
@@ -1721,6 +1721,7 @@
       <include xmlns="http://www.w3.org/2001/XInclude" href="../../Specs/localName.xml"/>
       <include xmlns="http://www.w3.org/2001/XInclude" href="../../Specs/mapping.xml"/>
       <include xmlns="http://www.w3.org/2001/XInclude" href="../../Specs/unicodeName.xml"/>
+      <include xmlns="http://www.w3.org/2001/XInclude" href="../../Specs/uniHan.xml"/>
       <include xmlns="http://www.w3.org/2001/XInclude" href="../../Specs/value.xml"/></specGrp>
   </div>
 </div>
