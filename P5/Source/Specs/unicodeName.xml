@@ -1,22 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?><!--
-Copyright TEI Consortium. 
-Dual-licensed under CC-by and BSD2 licences 
+Copyright TEI Consortium.
+Dual-licensed under CC-by and BSD2 licences
 See the file COPYING.txt for details
 $Date$
 $Id$
---><?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?><elementSpec xmlns="http://www.tei-c.org/ns/1.0" module="gaiji" ident="unicodeName" xml:id="UNICODENAME">
+--><?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?><elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" module="gaiji" ident="unicodeName" xml:id="UNICODENAME">
   <gloss versionDate="2007-07-04" xml:lang="en">unicode property name</gloss>
+  <gloss versionDate="2018-08-23" xml:lang="de">unicode Eigenschaftsname</gloss>
   <gloss versionDate="2007-12-20" xml:lang="ko">유니코드 특성명</gloss>
   <gloss versionDate="2007-05-02" xml:lang="zh-TW">統一碼性質名稱</gloss>
   <gloss versionDate="2007-06-12" xml:lang="fr">nom de propriété Unicode</gloss>
   <gloss versionDate="2007-05-04" xml:lang="es">Nombre de Propiedad Unicode</gloss>
   <gloss versionDate="2007-01-21" xml:lang="it">nome della proprietà Unicode</gloss>
   <desc versionDate="2005-01-14" xml:lang="en">contains the name of a registered Unicode normative or informative property.</desc>
+  <desc versionDate="2018-08-23" xml:lang="de">enthält den registrierten Namen einer normativen oder informativen Unicode Eigenschaft</desc>
   <desc versionDate="2007-12-20" xml:lang="ko">등록된 유니코드의 규범적 또는 제보적 특성의 이름을 포함한다.</desc>
   <desc versionDate="2007-05-02" xml:lang="zh-TW">包含一個統一碼規範性質之註冊名稱。</desc>
   <desc versionDate="2008-04-05" xml:lang="ja">登録されているユニコード基準素性または参考素性の名前を示す．</desc>
-  <desc versionDate="2007-06-12" xml:lang="fr">contient le nom d'une propriété normative ou informative enregistré
-    en Unicode</desc>
+  <desc versionDate="2007-06-12" xml:lang="fr">contient le nom d'une propriété normative ou informative enregistré en Unicode</desc>
   <desc versionDate="2007-05-04" xml:lang="es">contiene el nombre de una normativa o propiedad
     informativa registrada en Unicode.</desc>
   <desc versionDate="2007-01-21" xml:lang="it">contiene il nome di una proprietà Unicode registrata
@@ -26,12 +27,21 @@ $Id$
   </classes>
   <content>
     <textNode/>
-    <!--s:assert> some schematron rules here</s:assert-->
   </content>
+  <constraintSpec ident="known_property" scheme="schematron">
+    <constraint>
+      <sch:rule context="tei:unicodeName">
+        <!-- Permissable names according to https://www.unicode.org/Public/11.0.0/ucd/PropertyAliases.txt  -->
+        <sch:let name="uniProp" value="('kAccountingNumeric', 'kOtherNumeric', 'kPrimaryNumeric', 'Numeric_Value', 'Case_Folding', 'kCompatibilityVariant', 'Decomposition_Mapping', 'FC_NFKC_Closure', 'Lowercase_Mapping', 'NFKC_Casefold', 'Simple_Case_Folding', 'Simple_Lowercase_Mapping', 'Simple_Titlecase_Mapping', 'Simple_Uppercase_Mapping', 'Titlecase_Mapping', 'Uppercase_Mapping', 'Bidi_Mirroring_Glyph', 'Bidi_Paired_Bracket', 'kIICore', 'kIRG_GSource', 'kIRG_HSource', 'kIRG_JSource', 'kIRG_KPSource', 'kIRG_KSource', 'kIRG_MSource', 'kIRG_TSource', 'kIRG_USource', 'kIRG_VSource', 'kRSUnicode', 'Equivalent_Unified_Ideograph', 'ISO_Comment', 'Jamo_Short_Name', 'Name', 'Unicode_1_Name', 'Name_Alias', 'Script_Extensions', 'Age', 'Block', 'Script', 'Bidi_Class', 'Bidi_Paired_Bracket_Type', 'Canonical_Combining_Class', 'Decomposition_Type', 'East_Asian_Width', 'General_Category', 'Grapheme_Cluster_Break', 'Hangul_Syllable_Type', 'Indic_Positional_Category', 'Indic_Syllabic_Category', 'Joining_Group', 'Joining_Type', 'Line_Break', 'NFC_Quick_Check', 'NFD_Quick_Check', 'NFKC_Quick_Check', 'NFKD_Quick_Check', 'Numeric_Type', 'Sentence_Break', 'Vertical_Orientation', 'Word_Break', 'ASCII_Hex_Digit', 'Alphabetic', 'Bidi_Control', 'Bidi_Mirrored', 'Cased', 'Composition_Exclusion', 'Case_Ignorable', 'Full_Composition_Exclusion', 'Changes_When_Casefolded', 'Changes_When_Casemapped', 'Changes_When_NFKC_Casefolded', 'Changes_When_Lowercased', 'Changes_When_Titlecased', 'Changes_When_Uppercased', 'Dash', 'Deprecated', 'Default_Ignorable_Code_Point', 'Diacritic', 'Extender', 'Grapheme_Base', 'Grapheme_Extend', 'Grapheme_Link', 'Hex_Digit', 'Hyphen', 'ID_Continue', 'Ideographic', 'ID_Start', 'IDS_Binary_Operator', 'IDS_Trinary_Operator', 'Join_Control', 'Logical_Order_Exception', 'Lowercase', 'Math', 'Noncharacter_Code_Point', 'Other_Alphabetic', 'Other_Default_Ignorable_Code_Point', 'Other_Grapheme_Extend', 'Other_ID_Continue', 'Other_ID_Start', 'Other_Lowercase', 'Other_Math', 'Other_Uppercase', 'Pattern_Syntax', 'Pattern_White_Space', 'Prepended_Concatenation_Mark', 'Quotation_Mark', 'Radical', 'Regional_Indicator', 'Soft_Dotted', 'Sentence_Terminal', 'Terminal_Punctuation', 'Unified_Ideograph', 'Uppercase', 'Variation_Selector', 'White_Space', 'XID_Continue', 'XID_Start', 'Expands_On_NFC', 'Expands_On_NFD', 'Expands_On_NFKC', 'Expands_On_NFKD')"/>
+        <sch:let name="input" value="lower-case(replace(normalize-space(.), '[-|\s|_]', '_'))"/>
+        <sch:assert test="$input = $uniProp">This does not appear to be a valid unicode property name, consider using localName or uniHan instead.</sch:assert>
+      </sch:rule>
+        </constraint>
+      </constraintSpec>
   <attList>
     <attDef ident="version" usage="opt">
-      <desc versionDate="2005-01-14" xml:lang="en">specifies the version number of the Unicode Standard in which this property name is
-        defined.</desc>
+      <desc versionDate="2005-01-14" xml:lang="en">specifies the version number of the Unicode Standard in which this property name is defined.</desc>
+      <desc versionDate="2018-08-23" xml:lang="de">gibt die Versionsnummer des Unicode Standards an, in dem dieser Eigenschaftsname definiert ist.</desc>
       <desc versionDate="2007-12-20" xml:lang="ko">특성명이 정의된 표준 유니코드의 버전 숫자를 명시한다.</desc>
       <desc versionDate="2007-05-02" xml:lang="zh-TW">說明該性質名稱是定義在哪一版本的統一碼標準 (Unicode Standard) 中。</desc>
       <desc versionDate="2008-04-05" xml:lang="ja">当該素性名が定義されているユニコードの版番号を示す．</desc>
@@ -58,6 +68,9 @@ $Id$
   </exemplum>
   <remarks versionDate="2005-01-14" xml:lang="en">
     <p>A definitive list of current Unicode property names is provided in The Unicode Standard.</p>
+  </remarks>
+  <remarks versionDate="2018-08-23" xml:lang="de">
+    <p>Eine definitive Liste der aktuellen Unicode Eigenschaftsnamen wird vom Unicode Standard bereitgestellt.</p>
   </remarks>
   <remarks xml:lang="fr" versionDate="2007-06-12">
     <p>Une liste fermée des noms de propriétés Unicode est donnée dans la norme Unicode.</p>
