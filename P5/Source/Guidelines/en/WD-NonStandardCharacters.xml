@@ -286,7 +286,7 @@
         (or attribute-value pairs) which they are said to possess. For example, a lowercase letter is said to have the value
         <code>Ll</code>
         for the property
-        <code>general-category</code>. The Standard distinguishes between
+        <code>General_Category</code>. The Standard distinguishes between
         <term>normative</term>
         properties (i.e. properties which form part of the definition of a given character), and
         <term>informative</term>
@@ -315,7 +315,7 @@
       <p>For convenience, we list here some of the normative character properties and their values. For full information, refer to chapter 4 of
         <title>The Unicode Standard</title>, or the online documentation of the Unicode Character Database.
         <list type="gloss">
-          <label>general-category</label>
+          <label>General_Category</label>
           <item>The general category (described in the Unicode Standard chapter 4 section 5) is an assignment to some major classes and subclasses of characters. Suggested values for this property are listed here:
             <table>
               <row>
@@ -501,7 +501,7 @@
               </row>
             </table>
           </item>
-          <label>directional-category</label>
+          <label>Bidi_Class</label>
           <item>This property applies to all Unicode characters. It governs the application of the algorithm for bi-directional behaviour, as further specified in Unicode Annex 9,
             <title>The Bidirectional Algorithm</title>. The following 19 different values are currently defined for this property in
             <ref target="#WD-bibl-01">Davis et al (2006)</ref>:
@@ -622,7 +622,7 @@
               </row>
             </table>
           </item>
-          <label>canonical-combining-class</label>
+          <label>Canonical_Combining_Class</label>
           <item>This property exists for characters that are not used independently, but in combination with other characters, for example the strokes making up CJK (Chinese, Japanese, and Korean) characters. It records a class for these characters, which is used to determine how they interact typographically. The following values are defined in the Unicode Standard: (see
             <ref target="http://www.unicode.org/reports/tr44/#Canonical_Combining_Class_Values">Unicode Character Database: Canonical Combining Class Values</ref>); these were taken from version 5.0:
             <table>
@@ -810,7 +810,7 @@
               </row>
             </table>
           </item>
-          <label>character-decomposition-mapping</label>
+          <label>Decomposition_Mapping</label>
           <item>This property is defined for characters, which may be decomposed, for example to a canonical form plus a typographic variation of some kind. For such characters the Unicode standard specifies both a decomposition type and a decomposition mapping (i.e. another Unicode character to which this one may be mapped in the way specified by the decomposition type). The following types of mapping are defined in the Unicode Standard:
             <table>
               <row>
@@ -927,7 +927,7 @@
               </row>
             </table>
           </item>
-          <label>numeric-value</label>
+          <label>Numeric_Value</label>
           <item>This property applies for any character which expresses any kind of numeric value. Its value is the intended value in decimal notation.</item>
           <label>mirrored</label>
           <item>The mirrored character property is used to properly render characters such as U+0028,
@@ -1027,7 +1027,7 @@
     </p>
     <p>For brevity of encoding, it may be preferred to predefine internal entities such as the following:
       <eg xml:space="preserve">
-        <![CDATA[<!ENTITY r1 '<g ref="#r1">r</g>' >
+<![CDATA[<!ENTITY r1 '<g ref="#r1">r</g>' >
 <!ENTITY r2 '<g ref="#r2">r</g>' >]]>
       </eg>
       which would enable the same material to be encoded as follows:
@@ -1038,7 +1038,7 @@
     </p>
     <p>The same technique may be used to represent particular abbreviation marks as well as to represent other characters or glyphs. For example, if we believe that the r-with-one-funny-stroke is being used as an abbreviation for
       <code>receipt</code>, this might be represented as follows:<eg>
-        <![CDATA[<abbr>&r1;</abbr>]]>
+<![CDATA[<abbr>&r1;</abbr>]]>
       </eg>
     </p>
     <!-- should become a choice element some time -->
@@ -1144,7 +1144,7 @@
         <char xml:id="U4EBA-circled">
           <charName>CIRCLED IDEOGRAPH</charName>
           <charProp>
-            <unicodeName>character-decomposition-mapping</unicodeName>
+            <unicodeName>Decomposition_Mapping</unicodeName>
             <value>circle</value>
           </charProp>
           <charProp>

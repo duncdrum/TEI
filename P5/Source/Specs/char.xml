@@ -53,7 +53,7 @@ otherwise available in the document character set-->.</desc>
       <char xml:id="circledU4EBA">
         <charName>CIRCLED IDEOGRAPH 4EBA</charName>
         <charProp>
-          <unicodeName>character-decomposition-mapping</unicodeName>
+          <unicodeName>Decomposition_Mapping</unicodeName>
           <value>circle</value>
         </charProp>
         <charProp>

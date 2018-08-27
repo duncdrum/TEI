@@ -40,7 +40,7 @@ $Id$
   <exemplum xml:lang="und">
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
       <charProp>
-        <unicodeName>character-decomposition-mapping</unicodeName>
+        <unicodeName>Decomposition_Mapping</unicodeName>
         <value>circle</value>
       </charProp>
       <charProp>
