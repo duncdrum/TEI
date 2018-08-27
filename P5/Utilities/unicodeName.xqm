@@ -1,4 +1,7 @@
 xquery version "3.1";
+
+module namespace ucna = "http://tei-c.org/P5/Utilities";
+
 declare namespace ucd = "http://www.unicode.org/ns/2003/ucd/1.0";
 declare namespace tei = "http://www.tei-c.org/ns/1.0";
 declare namespace sch = "http://purl.oclc.org/dsdl/schematron";
@@ -6,25 +9,18 @@ declare namespace rng = "http://relaxng.org/ns/structure/1.0";
 
 declare default element namespace "http://www.tei-c.org/ns/1.0";
 
-declare module namespace uniname = "http://tei-c.org/P5/Utilities"
-declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization";
-declare option output:method "xml";
-declare option output:indent "yes";
-declare option output:omit-xml-declaration "yes";
 
-
-(: does not seem to be supported:)
-(:declare copy-namespaces no-preserve, no-inherit;:)
 (:~
  : we need to transform the compact schema into relax xml for processing.
  : @version 11.0.0
  : @see http://www.unicode.org/Public/11.0.0/ucd/PropertyAliases.txt
 :)
-declare variable $src-uri := 'http://www.unicode.org/Public/UCD/latest/ucd/PropertyAliases.txt';
-declare variable $ucd-rnc := 'http://www.unicode.org/reports/tr42/tr42-23.rnc';
-declare variable $ucd-rng := 'tr42-23.rng';
-declare variable $ucd := doc($ucd-rng);
-declare variable $spec := doc('../Source/Specs/unicodeName.xml');
+declare variable $ucna:src-uri := 'http://www.unicode.org/Public/UCD/latest/ucd/PropertyAliases.txt';
+declare variable $ucna:ucd-rnc := 'http://www.unicode.org/reports/tr42/tr42-23.rnc';
+declare variable $ucna:ucd-rng := 'tr42-23.rng';
+declare variable $ucna:ucd := doc($ucna:ucd-rng);
+declare variable $ucna:spec := doc('../Source/Specs/unicodeName.xml');
+declare variable $ucna:unihan := doc('../Source/Specs/uniHan.xml');
 
 (:~
  : XQuery functions to construct the schema constraints for the tei:unicodeName element.
@@ -47,7 +43,7 @@ declare variable $spec := doc('../Source/Specs/unicodeName.xml');
  :      </uniProp>
  :  </root>
 :)
-declare function uniname:txt-2-xml($uri as xs:string) as element(root) {
+declare function ucna:txt-2-xml($uri as xs:string) as element(root) {
     let $source := unparsed-text($uri)
     
     (: make txt well-formed xml for processing :)
@@ -85,20 +81,20 @@ declare function uniname:txt-2-xml($uri as xs:string) as element(root) {
  :
  : @return a single valList element containng property name values and equiv values from ucd schema
  :)
-declare function uniname:write-element-odd() as element(valList) {
+declare function ucna:write-uniName-odd() as element(valList) {
     <valList
         type="closed">
         {
-            for $p in uniname:txt-2-xml($src-uri)//pName[2]
+            for $p in ucna:txt-2-xml($ucna:src-uri)//pName[2]
                 order by $p
             return
                 <valItem
                     ident="{$p/text()}">
                     {
-                        if ($p/text() = uniname:lookup-names($p)) then
+                        if ($p/text() = ucna:lookup-names($p)) then
                             ()
                         else
-                            (<altIdent>{uniname:lookup-names($p)}</altIdent>)
+                            (<altIdent>{ucna:lookup-names($p)}</altIdent>)
                     }
                 </valItem>
         }
@@ -114,11 +110,11 @@ declare function uniname:write-element-odd() as element(valList) {
  :
  : @return a single valList element with valItem entries for exiting unicode versions
 :)
-declare function uniname:write-version-odd() as element(valList) {
+declare function ucna:write-version-odd() as element(valList) {
     <valList
         type="closed">
         {
-            for $a in $ucd//rng:attribute[@name = 'age']/rng:choice/rng:value
+            for $a in $ucna:ucd//rng:attribute[@name = 'age']/rng:choice/rng:value
                 order by $a
             return
                 <valItem
@@ -136,7 +132,7 @@ declare function uniname:write-version-odd() as element(valList) {
  :
  : @return the property name as it would appear in the reference file.
 :)
-declare function uniname:normalize-string($string as xs:string) as xs:string {
+declare function ucna:normalize-string($string as xs:string) as xs:string {
     lower-case(replace(normalize-space($string), '[-|\s|_]', '_'))
 };
 
@@ -147,18 +143,18 @@ declare function uniname:normalize-string($string as xs:string) as xs:string {
  :
  : @return the node without inherited namespace declarations 
 :)
-declare function uniname:strip-ns($n as node()) as node() {
+declare function ucna:strip-ns($n as node()) as node() {
     if ($n instance of element()) then
         (
         element {node-name($n)} {
             $n/@*,
-            $n/node()/uniname:strip-ns(.)
+            $n/node()/ucna:strip-ns(.)
         }
         )
     else
         if ($n instance of document-node()) then
             (
-            document {uniname:strip-ns($n/node())}
+            document {ucna:strip-ns($n/node())}
             )
         else
             (
@@ -174,21 +170,21 @@ declare function uniname:strip-ns($n as node()) as node() {
  :
  : @return the xml name of the provided the property name or alias
 :)
-declare function uniname:lookup-names($alias as xs:string) as item()* {
+declare function ucna:lookup-names($alias as xs:string) as item()* {
     
-    let $a-normal := uniname:normalize-string($alias)
+    let $a-normal := ucna:normalize-string($alias)
     
     let $lookup-prop :=
-    for $a in uniname:txt-2-xml($src-uri)//pName
+    for $a in ucna:txt-2-xml($ucna:src-uri)//pName
     return
-        if (uniname:normalize-string($a) = $a-normal)
+        if (ucna:normalize-string($a) = $a-normal)
         then
             ($a/..)
         else
             ()
     
     return
-        data($ucd//*[@name = $lookup-prop//pName]/@name)
+        data($ucna:ucd//*[@name = $lookup-prop//pName]/@name)
 };
 
 
@@ -200,13 +196,13 @@ declare function uniname:lookup-names($alias as xs:string) as item()* {
  :
  : @return a single ucd element containing a single character with the assigned properties
 :)
-declare function uniname:make-ucdchar($prop as xs:string, $val as xs:string) as element(ucd:ucd) {
+declare function ucna:make-ucdchar($prop as xs:string, $val as xs:string) as element(ucd:ucd) {
     
     element ucd:ucd {
         element ucd:repertoir {
             element ucd:char {
                 attribute cp {'12345'},
-                attribute {uniname:lookup-names($prop)} {$val}
+                attribute {ucna:lookup-names($prop)} {$val}
             }
         }
     }
@@ -214,38 +210,41 @@ declare function uniname:make-ucdchar($prop as xs:string, $val as xs:string) as 
 
 (:~
  : test the valItems from unicodeName.xml file from specs to be in sync with 
- : those generated by this script using relative path.
- :
- : @path to unicodeName.xml
+ : those generated by this script; uses relative paths.
  :
  : #return  xs:boolean
 :)
-declare function uniname:test-specs() as xs:boolean* {
+declare function ucna:test-specs() as xs:boolean* {
     
-    let $content := for $c in $spec//tei:content/tei:valList/*
+    let $content := for $c in $ucna:spec//tei:content/tei:valList/*
     return
-        uniname:strip-ns($c)
-    let $attDef := for $a in $spec//tei:attDef/tei:valList/*
+        ucna:strip-ns($c)
+        
+    let $attDef := for $a in $ucna:spec//tei:attDef/tei:valList/*
     return
-        uniname:strip-ns($a)
+        ucna:strip-ns($a)
+    
+    let $han := for $h in $ucna:unihan//tei:attDef/tei:valList/*
+    return
+        ucna:strip-ns($h)    
     
     return
         (try {
-            exists($spec)
+            exists($ucna:spec)
         }
         catch * {
             'could not locate the unicodeName.xml spec file, maybe it was moved?'
         },
         
         try {
-            uniname:write-element-odd()//tei:valItem = $content
+            ucna:write-uniName-odd()//tei:valItem = $content
         }
         catch * {
             'the list of valid unicode name properties has changed'
         },
         
         try {
-            uniname:write-version-odd()//tei:valItem = $attDef
+            ucna:write-version-odd()//tei:valItem = $attDef and ucna:write-version-odd()//tei:valItem = $han
         }
         catch * {
             'a new version of the Unicode Standard seem to have been released'
@@ -255,20 +254,22 @@ declare function uniname:test-specs() as xs:boolean* {
 
 (:~
  : If Saxon supports xQuery updating, this will replace the valLists 
- : in the specs file.
+ : in the spec files.
  : 
  : USE WITH CAUTION
 :)
-declare %updating function uniname:update-specs() {
+declare %updating function ucna:update-specs() {
     
-    let $content := $spec//tei:content/tei:valList
-    let $attDef := $spec//tei:attDef/tei:valList
+    let $content := $ucna:spec//tei:content/tei:valList
+    let $attDef := $ucna:spec//tei:attDef/tei:valList
+    let $han := $ucna:unihan//tei:attDef/tei:valList/*
     
     return
         (replace node $content
-            with uniname:write-element-odd(),
+            with ucna:write-uniName-odd(),
         replace node $attDef
-            with uniname:write-version-odd())
-
+            with ucna:write-version-odd(), 
+        replace node $han
+            with ucna:write-version-odd())
 };
 

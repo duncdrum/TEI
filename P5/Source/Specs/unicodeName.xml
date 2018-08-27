@@ -28,6 +28,7 @@
     </classes>
     <!-- see Utilities/unicodeName.xq -->
     <content>
+        <textNode/>
         <valList type="closed">
             <valItem ident="ASCII_Hex_Digit">
                 <altIdent>AHex</altIdent>
