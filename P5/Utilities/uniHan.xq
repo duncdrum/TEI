@@ -38,10 +38,13 @@ return
 };
 (:/html/body/div/table[2 - 97]:)
 (:~
- : take the html table and extract regex for schematron rules 
- :
+ : take the html table and extract regex for schematron rules.
+ : Requires manual editing of patterns, e.g. where '\/' '\x'
+ : occur since these are not supported in xpath regex processing. 
+ : 
  : @see https://www.unicode.org/reports/tr38/html/body/div/comment()[4-5]
  : START MAIN TABLE
+ : @see TEIC/TEI#1805
  :
  : @return one constraintSpec element per uniHan property
  :)
@@ -54,12 +57,44 @@ order by $name
 return
 <constraintSpec ident="{$name}" scheme="schematron">
     <constraint>
-    <sch:rule context="tei:uniHan">
-        <sch:let name="input-value" value="./following-sibling::tei:value"/>
-        <sch:assert test="matches($input-value, '{$pattern}')"><sch:value-of select="$input-value"/> does not match the expected value of the unihan property.</sch:assert>
+        <sch:rule context="tei:uniHan">
+            <sch:let name="input-value" value="./following-sibling::tei:value"/>
+            <sch:assert test=". != {$name} or matches($input-value, '{$pattern}')">
+            <sch:value-of select="$input-value"/> does not match the expected value of the unihan property.</sch:assert>
         </sch:rule>
     </constraint>
 </constraintSpec>
 };:)
 
-unih:write-uniHan-odd()
+
+let $data :=
+<charProp>
+    <uniHan>kCheungBauer</uniHan>
+    <value>055/08;TLBO;mang4</value>    
+    <uniHan>kHDZRadBreak</uniHan>
+    <value>⼀[U+2F00]:10001.010</value>
+    <uniHan>kHDZRadBreak</uniHan>
+    <value>⼀[U+2F00]:10001.010</value>
+    <uniHan>kHanyuPinlu</uniHan>
+    <value>yī(32747)</value>
+    <uniHan>kTang</uniHan>
+    <value>*tsit tsit</value>
+    <uniHan>kVietnamese</uniHan>
+    <value>thất</value>
+</charProp>
+
+for $n in $ucna:unihan//constraintSpec
+let $test := data($n//@test)
+let $name := data($n/@ident)
+let $out := replace($test, 'XXX', $name)
+return
+    replace node $n/constraint/sch:rule/sch:assert 
+        with <sch:assert test="{$out}">
+            <sch:value-of select="$input-value"/> does not match the expected value of the unihan property.</sch:assert>
+(:    <op>
+        <old>{$test}</old>
+        <new>{replace($test, 'XXX', $name)}</new>
+    </op>:)
+
+(:translate(data($n//@test), 'xxx', data($n/@ident)):)
+
