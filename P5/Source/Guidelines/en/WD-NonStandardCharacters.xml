@@ -1129,10 +1129,8 @@
       This definition specifies the mapping between this composed character and the individual Unicode-defined code points which make it up. It also supplies a single locally-defined property (<soCalled>entity</soCalled>) for the character concerned, the purpose of which is to supply a recommended character entity name for the character.</p>
     <p>For Han characters, Unicode provides dedicated symbols to capture the composition in Ideographic Description Sequences (IDS). Encoders are strongly encouraged to provide IDS for each variant ideograph in the header component of the gaiji module to faciliated greater human and machine readability of rare or unencoded characters, as in the following example:
     <egXML xmlns="http://www.tei-c.org/ns/Examples" source="#NONE">
-      <!-- more properties here -->
       <mapping type="IDS">⿻人為</mapping>
       <mapping type="standard">偽</mapping>
-      <!-- more properties here -->
     </egXML>
     The composition rules and further examples appear in <ref target="https://www.unicode.org/versions/Unicode11.0.0/ch18.pdf#G28626">Chapter 18.2: Ideographic Description Characters</ref> of the Unicode Standard. Editors should be aware that different sequences can accurately describe the same character. In the example the character "人" (U+4EBA) could have been substituted with "亻" (U+4EBB). Local preferences about how sequences are constructed should be documented in the <ptr target="#HD5"/>. Additionally, a number of online services, such as <ref target="https://chise.org"/>, offer quering and retrieving IDS, which facilitate a greater degree of stablilty across different applications.</p>
     <p>Under certain circumstances, Chinese Han characters can be written within a circle. Rather than considering this as simply an aspect of the rendering, an encoder may wish to treat such circled characters as entirely distinct derived characters.
