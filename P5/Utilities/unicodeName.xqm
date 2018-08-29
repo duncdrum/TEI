@@ -78,27 +78,69 @@ declare function ucna:txt-2-xml($uri as xs:string) as element(root) {
 
 (:~
  : turn propertyNames into valList for unicodeName
+ : pure odd however, doesn't play nice with valItem on elements.
+ :
+ : @see TEIC/TEI#1806
  :
  : @return a single valList element containng property name values and equiv values from ucd schema
  :)
+
+
 declare function ucna:write-uniName-odd() as element(valList) {
-    <valList
-        type="closed">
-        {
-            for $p in ucna:txt-2-xml($ucna:src-uri)//pName[2]
-                order by $p
-            return
-                <valItem
-                    ident="{$p/text()}">
-                    {
-                        if ($p/text() = ucna:lookup-names($p)) then
-                            ()
-                        else
-                            (<altIdent>{ucna:lookup-names($p)}</altIdent>)
-                    }
-                </valItem>
-        }
-    </valList>
+    
+    let $propAlias := ucna:txt-2-xml($ucna:src-uri)//pName[2]
+    
+    return
+        <valList
+            type="closed">
+            {
+                for $p in $propAlias
+                let $q := ucna:lookup-names($p)
+                    order by $p
+                return
+                    <valItem
+                        ident="{$p}">
+                        {
+                            if ($p = $q) then
+                                ()
+                            else
+                                (<equiv
+                                    name="{$q}"
+                                    uri="{$ucna:ucd-rnc}"/>)
+                        }
+                    </valItem>
+            }
+        </valList>
+};
+
+(:~
+ : turn propertyNames into rng:group for unicodeName
+ : we're using the long canonical forms [2]
+ : needs to be rng syntax since pure odd will not generate PCdata in dtds
+ :
+ : @see TEIC/TEI#1806
+ :
+ : @return a single valList element containng property name values and equiv values from ucd schema
+ :)
+
+
+declare function ucna:write-uniName-rng() as element(rng:group) {
+    
+    let $propAlias := ucna:txt-2-xml($ucna:src-uri)//pName[2]
+    let $short := for $p in $propAlias
+        return 
+            ucna:lookup-names($p)
+    let $distinct := distinct-values(($propAlias/text(), $short))
+    
+    return
+        <rng:group>
+            <rng:choice>
+                { for $d in $distinct
+                order by lower-case($d)
+                return
+                    <rng:value>{$d}</rng:value>}
+            </rng:choice>
+        </rng:group>
 };
 
 
@@ -219,14 +261,14 @@ declare function ucna:test-specs() as xs:boolean* {
     let $content := for $c in $ucna:spec//tei:content/tei:valList/*
     return
         ucna:strip-ns($c)
-        
+    
     let $attDef := for $a in $ucna:spec//tei:attDef/tei:valList/*
     return
         ucna:strip-ns($a)
     
     let $han := for $h in $ucna:unihan//tei:attDef/tei:valList/*
     return
-        ucna:strip-ns($h)    
+        ucna:strip-ns($h)
     
     return
         (try {
@@ -268,8 +310,7 @@ declare %updating function ucna:update-specs() {
         (replace node $content
             with ucna:write-uniName-odd(),
         replace node $attDef
-            with ucna:write-version-odd(), 
+            with ucna:write-version-odd(),
         replace node $han
             with ucna:write-version-odd())
 };
-

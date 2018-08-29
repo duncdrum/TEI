@@ -1,5 +1,6 @@
 <!-- Copyright TEI Consortium. Dual-licensed under CC-by and BSD2 licences See the file COPYING.txt for details $Date$ $Id$ --><?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?><elementSpec xmlns="http://www.tei-c.org/ns/1.0"
              xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+             xmlns:rng="http://relaxng.org/ns/structure/1.0" 
              ident="uniHan"
              module="gaiji"
              xml:id="UNIHAN">
@@ -8,107 +9,109 @@
         UniHan field.</desc>
     <classes>
         <!-- This seems odd but matches unicodeName -->
-        <memberOf key="att.global"/>
+        <memberOf key="att.global"/>       
     </classes>
     <content>
-        <valList type="closed">
-            <valItem ident="kZVariant"/>
-            <valItem ident="kAccountingNumeric"/>
-            <valItem ident="kBigFive"/>
-            <valItem ident="kCCCII"/>
-            <valItem ident="kCNS1986"/>
-            <valItem ident="kCNS1992"/>
-            <valItem ident="kCangjie"/>
-            <valItem ident="kCantonese"/>
-            <valItem ident="kCheungBauer"/>
-            <valItem ident="kCheungBauerIndex"/>
-            <valItem ident="kCihaiT"/>
-            <valItem ident="kCompatibilityVariant"/>
-            <valItem ident="kCowles"/>
-            <valItem ident="kDaeJaweon"/>
-            <valItem ident="kDefinition"/>
-            <valItem ident="kEACC"/>
-            <valItem ident="kFenn"/>
-            <valItem ident="kFennIndex"/>
-            <valItem ident="kFourCornerCode"/>
-            <valItem ident="kFrequency"/>
-            <valItem ident="kGB0"/>
-            <valItem ident="kGB1"/>
-            <valItem ident="kGB3"/>
-            <valItem ident="kGB5"/>
-            <valItem ident="kGB7"/>
-            <valItem ident="kGB8"/>
-            <valItem ident="kGSR"/>
-            <valItem ident="kGradeLevel"/>
-            <valItem ident="kHDZRadBreak"/>
-            <valItem ident="kHKGlyph"/>
-            <valItem ident="kHKSCS"/>
-            <valItem ident="kHanYu"/>
-            <valItem ident="kHangul"/>
-            <valItem ident="kHanyuPinlu"/>
-            <valItem ident="kHanyuPinyin"/>
-            <valItem ident="kIBMJapan"/>
-            <valItem ident="kIICore"/>
-            <valItem ident="kIRGDaeJaweon"/>
-            <valItem ident="kIRGDaiKanwaZiten"/>
-            <valItem ident="kIRGHanyuDaZidian"/>
-            <valItem ident="kIRGKangXi"/>
-            <valItem ident="kIRG_GSource"/>
-            <valItem ident="kIRG_HSource"/>
-            <valItem ident="kIRG_JSource"/>
-            <valItem ident="kIRG_KPSource"/>
-            <valItem ident="kIRG_KSource"/>
-            <valItem ident="kIRG_MSource"/>
-            <valItem ident="kIRG_TSource"/>
-            <valItem ident="kIRG_USource"/>
-            <valItem ident="kIRG_VSource"/>
-            <valItem ident="kJIS0213"/>
-            <valItem ident="kJa"/>
-            <valItem ident="kJapaneseKun"/>
-            <valItem ident="kJapaneseOn"/>
-            <valItem ident="kJinmeiyoKanji"/>
-            <valItem ident="kJis0"/>
-            <valItem ident="kJis1"/>
-            <valItem ident="kJoyoKanji"/>
-            <valItem ident="kKPS0"/>
-            <valItem ident="kKPS1"/>
-            <valItem ident="kKSC0"/>
-            <valItem ident="kKSC1"/>
-            <valItem ident="kKangXi"/>
-            <valItem ident="kKarlgren"/>
-            <valItem ident="kKorean"/>
-            <valItem ident="kKoreanEducationHanja"/>
-            <valItem ident="kKoreanName"/>
-            <valItem ident="kLau"/>
-            <valItem ident="kMainlandTelegraph"/>
-            <valItem ident="kMandarin"/>
-            <valItem ident="kMatthews"/>
-            <valItem ident="kMeyerWempe"/>
-            <valItem ident="kMorohashi"/>
-            <valItem ident="kNelson"/>
-            <valItem ident="kOtherNumeric"/>
-            <valItem ident="kPhonetic"/>
-            <valItem ident="kPrimaryNumeric"/>
-            <valItem ident="kPseudoGB1"/>
-            <valItem ident="kRSAdobe_Japan1_6"/>
-            <valItem ident="kRSJapanese"/>
-            <valItem ident="kRSKanWa"/>
-            <valItem ident="kRSKangXi"/>
-            <valItem ident="kRSKorean"/>
-            <valItem ident="kRSUnicode"/>
-            <valItem ident="kSBGY"/>
-            <valItem ident="kSemanticVariant"/>
-            <valItem ident="kSimplifiedVariant"/>
-            <valItem ident="kSpecializedSemanticVariant"/>
-            <valItem ident="kTGH"/>
-            <valItem ident="kTaiwanTelegraph"/>
-            <valItem ident="kTang"/>
-            <valItem ident="kTotalStrokes"/>
-            <valItem ident="kTraditionalVariant"/>
-            <valItem ident="kVietnamese"/>
-            <valItem ident="kXHC1983"/>
-            <valItem ident="kXerox"/>
-        </valList>
+       <rng:group>
+          <rng:choice>
+             <rng:value> kZVariant</rng:value>
+             <rng:value>kAccountingNumeric</rng:value>
+             <rng:value>kBigFive</rng:value>
+             <rng:value>kCCCII</rng:value>
+             <rng:value>kCNS1986</rng:value>
+             <rng:value>kCNS1992</rng:value>
+             <rng:value>kCangjie</rng:value>
+             <rng:value>kCantonese</rng:value>
+             <rng:value>kCheungBauer</rng:value>
+             <rng:value>kCheungBauerIndex</rng:value>
+             <rng:value>kCihaiT</rng:value>
+             <rng:value>kCompatibilityVariant</rng:value>
+             <rng:value>kCowles</rng:value>
+             <rng:value>kDaeJaweon</rng:value>
+             <rng:value>kDefinition</rng:value>
+             <rng:value>kEACC</rng:value>
+             <rng:value>kFenn</rng:value>
+             <rng:value>kFennIndex</rng:value>
+             <rng:value>kFourCornerCode</rng:value>
+             <rng:value>kFrequency</rng:value>
+             <rng:value>kGB0</rng:value>
+             <rng:value>kGB1</rng:value>
+             <rng:value>kGB3</rng:value>
+             <rng:value>kGB5</rng:value>
+             <rng:value>kGB7</rng:value>
+             <rng:value>kGB8</rng:value>
+             <rng:value>kGSR</rng:value>
+             <rng:value>kGradeLevel</rng:value>
+             <rng:value>kHDZRadBreak</rng:value>
+             <rng:value>kHKGlyph</rng:value>
+             <rng:value>kHKSCS</rng:value>
+             <rng:value>kHanYu</rng:value>
+             <rng:value>kHangul</rng:value>
+             <rng:value>kHanyuPinlu</rng:value>
+             <rng:value>kHanyuPinyin</rng:value>
+             <rng:value>kIBMJapan</rng:value>
+             <rng:value>kIICore</rng:value>
+             <rng:value>kIRGDaeJaweon</rng:value>
+             <rng:value>kIRGDaiKanwaZiten</rng:value>
+             <rng:value>kIRGHanyuDaZidian</rng:value>
+             <rng:value>kIRGKangXi</rng:value>
+             <rng:value>kIRG_GSource</rng:value>
+             <rng:value>kIRG_HSource</rng:value>
+             <rng:value>kIRG_JSource</rng:value>
+             <rng:value>kIRG_KPSource</rng:value>
+             <rng:value>kIRG_KSource</rng:value>
+             <rng:value>kIRG_MSource</rng:value>
+             <rng:value>kIRG_TSource</rng:value>
+             <rng:value>kIRG_USource</rng:value>
+             <rng:value>kIRG_VSource</rng:value>
+             <rng:value>kJIS0213</rng:value>
+             <rng:value>kJa</rng:value>
+             <rng:value>kJapaneseKun</rng:value>
+             <rng:value>kJapaneseOn</rng:value>
+             <rng:value>kJinmeiyoKanji</rng:value>
+             <rng:value>kJis0</rng:value>
+             <rng:value>kJis1</rng:value>
+             <rng:value>kJoyoKanji</rng:value>
+             <rng:value>kKPS0</rng:value>
+             <rng:value>kKPS1</rng:value>
+             <rng:value>kKSC0</rng:value>
+             <rng:value>kKSC1</rng:value>
+             <rng:value>kKangXi</rng:value>
+             <rng:value>kKarlgren</rng:value>
+             <rng:value>kKorean</rng:value>
+             <rng:value>kKoreanEducationHanja</rng:value>
+             <rng:value>kKoreanName</rng:value>
+             <rng:value>kLau</rng:value>
+             <rng:value>kMainlandTelegraph</rng:value>
+             <rng:value>kMandarin</rng:value>
+             <rng:value>kMatthews</rng:value>
+             <rng:value>kMeyerWempe</rng:value>
+             <rng:value>kMorohashi</rng:value>
+             <rng:value>kNelson</rng:value>
+             <rng:value>kOtherNumeric</rng:value>
+             <rng:value>kPhonetic</rng:value>
+             <rng:value>kPrimaryNumeric</rng:value>
+             <rng:value>kPseudoGB1</rng:value>
+             <rng:value>kRSAdobe_Japan1_6</rng:value>
+             <rng:value>kRSJapanese</rng:value>
+             <rng:value>kRSKanWa</rng:value>
+             <rng:value>kRSKangXi</rng:value>
+             <rng:value>kRSKorean</rng:value>
+             <rng:value>kRSUnicode</rng:value>
+             <rng:value>kSBGY</rng:value>
+             <rng:value>kSemanticVariant</rng:value>
+             <rng:value>kSimplifiedVariant</rng:value>
+             <rng:value>kSpecializedSemanticVariant</rng:value>
+             <rng:value>kTGH</rng:value>
+             <rng:value>kTaiwanTelegraph</rng:value>
+             <rng:value>kTang</rng:value>
+             <rng:value>kTotalStrokes</rng:value>
+             <rng:value>kTraditionalVariant</rng:value>
+             <rng:value>kVietnamese</rng:value>
+             <rng:value>kXHC1983</rng:value>
+             <rng:value>kXerox</rng:value>
+          </rng:choice>
+       </rng:group>
     </content>
     <constraintSpec ident="kAccountingNumeric" scheme="schematron">
         <constraint>
