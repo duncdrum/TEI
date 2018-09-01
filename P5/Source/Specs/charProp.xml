@@ -30,6 +30,7 @@ $Id$
     <sequence>
       <alternate>
         <elementRef key="unicodeName"/>
+        <elementRef key="uniHan"/>
         <elementRef key="localName"/>
       </alternate>
       <elementRef key="value"/>

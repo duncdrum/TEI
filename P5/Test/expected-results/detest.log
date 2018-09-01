@@ -36,29 +36,47 @@
      [xslt]         @default-NOT-in-list-req attribute is not among the closed list of possible
      [xslt]         values (string(tei:defaultVal) = tei:valList/tei:valItem/@ident)
 detest.xml
-detest.xml:42:13: error: unfinished content of element http://www.tei-c.org/ns/1.0^lg
+detest.xml:17:6: error: element http://www.tei-c.org/ns/1.0^charDecl not allowed
+required:
+	element http://www.tei-c.org/ns/1.0^schemaRef
+	element http://www.tei-c.org/ns/1.0^projectDesc
+	element http://www.tei-c.org/ns/1.0^samplingDecl
+	element http://www.tei-c.org/ns/1.0^editorialDecl
+	element http://www.tei-c.org/ns/1.0^tagsDecl
+	element http://www.tei-c.org/ns/1.0^styleDefDecl
+	element http://www.tei-c.org/ns/1.0^refsDecl
+	element http://www.tei-c.org/ns/1.0^listPrefixDef
+	element http://www.tei-c.org/ns/1.0^classDecl
+	element http://www.tei-c.org/ns/1.0^geoDecl
+	element http://www.tei-c.org/ns/1.0^appInfo
+	element http://www.tei-c.org/ns/1.0^variantEncoding
+	element http://www.tei-c.org/ns/1.0^schemaSpec
+	element http://www.tei-c.org/ns/1.0^transcriptionDesc
+	element http://www.tei-c.org/ns/1.0^p
+	element http://www.tei-c.org/ns/1.0^ab
+detest.xml:45:13: error: unfinished content of element http://www.tei-c.org/ns/1.0^lg
 required:
 	element http://www.tei-c.org/ns/1.0^l
 	element http://www.tei-c.org/ns/1.0^stage
 	element http://www.tei-c.org/ns/1.0^desc
 	element http://www.tei-c.org/ns/1.0^label
 	element http://www.tei-c.org/ns/1.0^lg
-detest.xml:118:10: error: attribute ^truth with invalid value "no"
+detest.xml:132:10: error: attribute ^truth with invalid value "no"
 required:
 	data http://www.w3.org/2001/XMLSchema-datatypes^boolean
-detest.xml:120:10: error: attribute http://www.w3.org/XML/1998/namespace^lang not allowed
+detest.xml:134:10: error: attribute http://www.w3.org/XML/1998/namespace^lang not allowed
 required:
 	after
-detest.xml:123:10: error: attribute ^enumerated with invalid value " dog  breath"
+detest.xml:137:10: error: attribute ^enumerated with invalid value " dog  breath"
 required:
 	data http://www.w3.org/2001/XMLSchema-datatypes^token
-detest.xml:128:10: error: attribute ^name with invalid value "123"
+detest.xml:142:10: error: attribute ^name with invalid value "123"
 required:
 	data http://www.w3.org/2001/XMLSchema-datatypes^Name
-detest.xml:137:10: error: unfinished content of element http://www.tei-c.org/ns/1.0^lg
+detest.xml:152:10: error: unfinished content of element http://www.tei-c.org/ns/1.0^lg
 required:
 	element http://www.tei-c.org/ns/1.0^l
-detest.xml:162:37: error: invalid data or text not allowed
+detest.xml:198:36: error: invalid data or text not allowed
 required:
 	element http://www.tei-c.org/ns/1.0^add
 	element http://www.tei-c.org/ns/1.0^del
@@ -69,34 +87,34 @@ required:
 	element http://www.tei-c.org/ns/1.0^cb
 	element http://www.tei-c.org/ns/1.0^fw
 	element http://www.tei-c.org/ns/1.0^anchor
-detest.xml:180:4: error: attribute ^target with invalid value "#spanTest"
+detest.xml:243:11: error: attribute ^target with invalid value "#spanTest"
 required:
 	data http://www.w3.org/2001/XMLSchema-datatypes^anyURI
-detest.xml:186:4: error: missing attributes of http://www.tei-c.org/ns/1.0^media
+detest.xml:249:11: error: missing attributes of http://www.tei-c.org/ns/1.0^media
 required:
 	attribute ^url
-detest.xml:187:4: error: missing attributes of http://www.tei-c.org/ns/1.0^media
+detest.xml:250:11: error: missing attributes of http://www.tei-c.org/ns/1.0^media
 required:
 	attribute ^mimeType
-detest.xml:193:44: error: invalid data or text not allowed
+detest.xml:256:51: error: invalid data or text not allowed
 required:
 	after
-detest.xml:194:34: error: invalid data or text not allowed
+detest.xml:257:41: error: invalid data or text not allowed
 required:
 	after
-detest.xml:195:54: error: invalid data or text not allowed
+detest.xml:258:61: error: invalid data or text not allowed
 required:
 	after
-detest.xml:196:18: error: invalid data or text not allowed
+detest.xml:259:25: error: invalid data or text not allowed
 required:
 	after
-detest.xml:219:5: error: element http://www.tei-c.org/ns/1.0^altIdentifier not allowed
+detest.xml:286:12: error: element http://www.tei-c.org/ns/1.0^altIdentifier not allowed
 required:
 	element http://www.tei-c.org/ns/1.0^msIdentifier
-detest.xml:222:3: error: unfinished content of element http://www.tei-c.org/ns/1.0^msPart
+detest.xml:289:10: error: unfinished content of element http://www.tei-c.org/ns/1.0^msPart
 required:
 	element http://www.tei-c.org/ns/1.0^msIdentifier
-detest.xml:251:3: error: element http://www.tei-c.org/ns/1.0^idno not allowed
+detest.xml:323:10: error: element http://www.tei-c.org/ns/1.0^idno not allowed
 required:
 	after
 allowed:
