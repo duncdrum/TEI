@@ -30,7 +30,8 @@ individual characters, and related questions. </p>
 
 
 
-<div type="div2" xml:id="WDNE"><head>Is Your Journey Really Necessary?</head>
+<div type="div2" xml:id="WDNE">
+    <head>Is Your Journey Really Necessary?</head>
     <p>Despite the availability of Unicode, text encoders still
     sometimes find that the published repertoire of available
     characters is inadequate to their needs. This is particularly the
@@ -50,39 +51,33 @@ not, see <ptr target="#D4-42"/>. </p>
     In order to determine whether a character has been encoded,
     encoders should follow the following steps:
 <list rend="numbered">
-      <item><p>Check the Unicode
-      web site at <ptr target="http://www.unicode.org"/>, in particular the page <ref target="http://unicode.org/standard/where/">"Where is my
+      <item>
+          <p>Check the Unicode
+      web site at <ptr target="https://www.unicode.org"/>, in particular the page <ref target="https://unicode.org/standard/where/">"Where is my
       Character?"</ref>, and the associated character code charts.
       Alternatively, users can check the latest published version of
-      <title>The Unicode Standard</title> (<ref target="#CH-BIBL-3">Unicode Consortium (2006)</ref>), though the web site is
-      often more up to date than the printed version, and should be
-      checked for preference.</p> 
+      <ref target="https://www.unicode.org/publications/">
+              <title>The Unicode Standard</title>
+            </ref>.</p> 
 <p>The pictures (<soCalled>glyphs</soCalled>) in the Unicode code
 charts are only meant to be representative, not definitive. If a
 specific form of an already encoded character is required for a
 project, refer to the guidelines contained below under <ref target="#D25-30">Annotating Characters</ref>. Remember that your
 encoded document may be rendered on a system which has different fonts
 from yours: if the specific form of a character is important to you,
-then you should document it. </p></item>
+then you should document it. </p>
+        </item>
       <item>Check the Proposed New Characters web page (<ptr target="http://unicode.org/alloc/Pipeline.html"/>) to see whether
       the character is in line for approval.</item>
 
-<item>Ask on the Unicode email list (<ptr target="http://www.unicode.org/consortium/distlist.html"/>) to
+<item>Ask on the Unicode email list (<ptr target="https://www.unicode.org/consortium/distlist.html"/>) to
 see whether  a proposal is pending, or to determine whether this
 character is considered eligible for addition
 to the Unicode Standard.  </item>
 
 </list> </p>
-    <p>Since there are now close to 100,000 characters in Unicode,
-    chances are good that what you need is already there, but it might
-    not be easy to find, since it might have a different name in
-    Unicode.  Look again, this time at other sites, for example <ptr target="http://www.eki.ee/letter/"/>, which also provide searches
-    based on scripts and languages. Take care, however, that all the
-    properties of what seems to be a relevant character are consistent
-    with those of the character you are looking for. For example, if
-    your character is definitely a digit, but the properties of the
-    best match you can find for it say that it is a letter, you may
-    have a character not yet defined in Unicode.  </p>
+    <p>Since there are now more than 130,000 characters in Unicode, chances are good that what you need is already there, but it might not be easy to find, since it might have a different name in Unicode. Editors working with ideographic characters, typical for East Asian writing systems, should consult the Unihan Database (<ptr target="https://unicode.org/charts/unihan.html"/>). Look again, this time at other sites, for example <ptr target="https://www.eki.ee/letter/"/> (no CJK) or <ptr target="https://www.chise.org"/> (CJK only), which also provide searches based on scripts and languages. Take care, however, that all the properties of what seems to be a relevant character are consistent with those of the character you are looking for. For example, if your character is definitely a digit, but the properties of the best match you can find for it say that it is a letter, you may have a character not yet defined in Unicode.
+    </p>
 <p>In general, it is advisable to avoid Unicode characters generally
 described as presentation forms.<note place="bottom">Specifically,
 characters in the Unicode blocks Alphabetic Presentation Forms, Arabic
@@ -100,12 +95,13 @@ Symbol, Math).</p>
 it is good practice to consult other colleagues and practitioners to
 see whether a consensus has emerged in favour of one or other of
 them. </p>
-<p>If, however, no suitable form of your character seems to exist,
-    the next question will be: <q>Does the graphical unit in question
+<p>If, however, no suitable form of your character exists, the next question will be:
+      <q>Does the graphical unit in question
     represent a variant form of a known character, or does it
     represent a completely unencoded character?</q> If the character
     is determined to be missing from the Unicode Standard, it would be helpful to
-    submit the new character for inclusion (see <ptr target="http://unicode.org/pending/proposals.html"/>).  </p>
+    submit the new character for inclusion (see <ptr target="https://unicode.org/pending/proposals.html"/>). The markup elements introduces in this section should form a solid basis for preparing a structured proposal for additions to the standard.
+    </p>
     <p>These guidelines will help you proceed once you have
      identified a given graphical unit as either a variant or an
      unencoded character. Determining this will require knowledge of
@@ -239,7 +235,8 @@ creating new names for characters or glyphs<note place="bottom">It should be not
 however, that this naming convention cannot meaningfully be applied to
 East Asian characters; the typical Unicode descriptions for these
 characters take the form <q>CJK Unified Ideograph
-<code>U+4E00</code></q>, where <code>U+4E00</code> is simply the
+<code>U+4E00</code>
+        </q>, where <code>U+4E00</code> is simply the
 Unicode code point value of the character in question.  In cases where
 no Unicode code point exists, there is little hope of finding a name
 that helps to identify the character. Names should therefore be
@@ -251,7 +248,8 @@ glyphs:
 <specList>
 <specDesc key="charName"/>
 <specDesc key="glyphName"/>
-</specList></p>
+</specList>
+    </p>
 <p>Within both <gi>char</gi> and <gi>glyph</gi>, the following elements are available:
 <specList>
 <specDesc key="gloss"/>
@@ -292,7 +290,8 @@ characters. The type of association is indicated by the
 uppercase equivalences, <code>lowercase</code> for lowercase
 equivalences, <code>standard</code> for standardized forms, and
 <code>simplified</code> for simplified characters, etc., as in the
-following example: <egXML xmlns="http://www.tei-c.org/ns/Examples" source="#NONE"><charDecl>
+following example: <egXML xmlns="http://www.tei-c.org/ns/Examples" source="#NONE">
+        <charDecl>
 <char xml:id="aenl">
 <charName>LATIN LETTER ENLARGED SMALL A</charName>
 <charProp>
@@ -307,7 +306,8 @@ following example: <egXML xmlns="http://www.tei-c.org/ns/Examples" source="#NONE
 <p>The mapping element may also be used to represent a mapping of the
 character or (more likely) glyph under discussion onto a character
 from the private use area as in this example:
-<egXML xmlns="http://www.tei-c.org/ns/Examples" source="#NONE"><charDecl>
+<egXML xmlns="http://www.tei-c.org/ns/Examples" source="#NONE">
+        <charDecl>
 <glyph xml:id="z103">
 <glyphName>LATIN LETTER Z WITH TWO STROKES</glyphName>
 <mapping type="standard">Z</mapping>
@@ -321,12 +321,13 @@ glyph may be supplied using the generic <gi>charProp</gi> element
 described in the next section. Despite its name, this element may be
 used for either characters or glyphs.
 </p>
-<div type="div3" xml:id="ucsprops"><head>Character Properties</head>
+<div type="div3" xml:id="ucsprops">
+      <head>Character Properties</head>
 <p>The Unicode Standard documents <soCalled>ideal</soCalled>
 characters, defined by reference to a number of
 <term>properties</term> (or attribute-value pairs) which they are said
 to possess. For example, a lowercase letter is said to have the value
-<code>Ll</code> for the property <code>general-category</code>. The
+<code>Ll</code> for the property <code>General_Category</code>. The
 Standard distinguishes between <term>normative</term> properties
 (i.e. properties which form part of the definition of a given
 character), and <term>informative</term> or <term>additional</term>
@@ -353,71 +354,317 @@ For each property, the encoder must supply either a
 properties and their values. For full information, refer to chapter 4 of
 <title>The Unicode Standard</title>, or the online documentation of the Unicode Character Database.
 <list type="gloss">
-	 <label>general-category</label> <item>The general
+	 <label>General_Category</label> <item>The general
 	  category (described in the Unicode Standard chapter 4 section 5) is an assignment to some
 	  major classes and subclasses of characters.  Suggested
 	  values for this property are listed here:
 <table>
-<row><cell><code>Lu</code></cell><cell>Letter, uppercase</cell></row>
-<row><cell><code>Ll</code></cell><cell>Letter, lowercase</cell></row>
-<row><cell><code>Lt</code></cell><cell>Letter, titlecase</cell></row>
-<row><cell><code>Lm </code></cell><cell>Letter, modifier</cell></row>
-<row><cell><code>Lo</code></cell><cell>Letter, other</cell></row>
-<row><cell><code>Mn</code></cell><cell>Mark, nonspacing</cell></row>
-<row><cell><code>Mc</code></cell><cell>Mark, spacing combining</cell></row>
-<row><cell><code>Me</code></cell><cell>Mark, enclosing</cell></row>
-<row><cell><code>Nd</code></cell><cell>Number, decimal digit</cell></row>
-<row><cell><code>Nl</code></cell><cell>Number, letter</cell></row>
-<row><cell><code>No</code></cell><cell>Number, other</cell></row>
-<row><cell><code>Pc</code></cell><cell>Punctuation, connector</cell></row>
-<row><cell><code>Pd</code></cell><cell>Punctuation, dash</cell></row>
-<row><cell><code>Ps</code></cell><cell>Punctuation, open</cell></row>
-<row><cell><code>Pe</code></cell><cell>Punctuation, close</cell></row>
-<row><cell><code>Pi</code></cell><cell>Punctuation, initial quote</cell></row>
-<row><cell><code>Pf</code></cell><cell>Punctuation, final quote</cell></row>
-<row><cell><code>Po</code></cell><cell>Punctuation, other</cell></row>
-<row><cell><code>Sm</code></cell><cell>Symbol, math</cell></row>
-<row><cell><code>Sc</code></cell><cell>Symbol, currency</cell></row>
-<row><cell><code>Sk</code></cell><cell>Symbol, modifier</cell></row>
-<row><cell><code>So</code></cell><cell>Symbol, other</cell></row>
-<row><cell><code>Zs</code></cell><cell>Separator, space</cell></row>
-<row><cell><code>Zl</code></cell><cell>Separator, line</cell></row>
-<row><cell><code>Zp</code></cell><cell>Separator, paragraph</cell></row>
-<row><cell><code>Cc</code></cell><cell>Other, control</cell></row>
-<row><cell><code>Cf</code></cell><cell>Other, format</cell></row>
-<row><cell><code>Cs</code></cell><cell>Other, surrogate</cell></row>
-<row><cell><code>Co</code></cell><cell>Other, private use</cell></row>
-<row><cell><code>Cn</code></cell><cell>Other, not assigned</cell></row>
+<row>
+                <cell>
+                  <code>Lu</code>
+                </cell>
+                <cell>Letter, uppercase</cell>
+              </row>
+<row>
+                <cell>
+                  <code>Ll</code>
+                </cell>
+                <cell>Letter, lowercase</cell>
+              </row>
+<row>
+                <cell>
+                  <code>Lt</code>
+                </cell>
+                <cell>Letter, titlecase</cell>
+              </row>
+<row>
+                <cell>
+                  <code>Lm </code>
+                </cell>
+                <cell>Letter, modifier</cell>
+              </row>
+<row>
+                <cell>
+                  <code>Lo</code>
+                </cell>
+                <cell>Letter, other</cell>
+              </row>
+<row>
+                <cell>
+                  <code>Mn</code>
+                </cell>
+                <cell>Mark, nonspacing</cell>
+              </row>
+<row>
+                <cell>
+                  <code>Mc</code>
+                </cell>
+                <cell>Mark, spacing combining</cell>
+              </row>
+<row>
+                <cell>
+                  <code>Me</code>
+                </cell>
+                <cell>Mark, enclosing</cell>
+              </row>
+<row>
+                <cell>
+                  <code>Nd</code>
+                </cell>
+                <cell>Number, decimal digit</cell>
+              </row>
+<row>
+                <cell>
+                  <code>Nl</code>
+                </cell>
+                <cell>Number, letter</cell>
+              </row>
+<row>
+                <cell>
+                  <code>No</code>
+                </cell>
+                <cell>Number, other</cell>
+              </row>
+<row>
+                <cell>
+                  <code>Pc</code>
+                </cell>
+                <cell>Punctuation, connector</cell>
+              </row>
+<row>
+                <cell>
+                  <code>Pd</code>
+                </cell>
+                <cell>Punctuation, dash</cell>
+              </row>
+<row>
+                <cell>
+                  <code>Ps</code>
+                </cell>
+                <cell>Punctuation, open</cell>
+              </row>
+<row>
+                <cell>
+                  <code>Pe</code>
+                </cell>
+                <cell>Punctuation, close</cell>
+              </row>
+<row>
+                <cell>
+                  <code>Pi</code>
+                </cell>
+                <cell>Punctuation, initial quote</cell>
+              </row>
+<row>
+                <cell>
+                  <code>Pf</code>
+                </cell>
+                <cell>Punctuation, final quote</cell>
+              </row>
+<row>
+                <cell>
+                  <code>Po</code>
+                </cell>
+                <cell>Punctuation, other</cell>
+              </row>
+<row>
+                <cell>
+                  <code>Sm</code>
+                </cell>
+                <cell>Symbol, math</cell>
+              </row>
+<row>
+                <cell>
+                  <code>Sc</code>
+                </cell>
+                <cell>Symbol, currency</cell>
+              </row>
+<row>
+                <cell>
+                  <code>Sk</code>
+                </cell>
+                <cell>Symbol, modifier</cell>
+              </row>
+<row>
+                <cell>
+                  <code>So</code>
+                </cell>
+                <cell>Symbol, other</cell>
+              </row>
+<row>
+                <cell>
+                  <code>Zs</code>
+                </cell>
+                <cell>Separator, space</cell>
+              </row>
+<row>
+                <cell>
+                  <code>Zl</code>
+                </cell>
+                <cell>Separator, line</cell>
+              </row>
+<row>
+                <cell>
+                  <code>Zp</code>
+                </cell>
+                <cell>Separator, paragraph</cell>
+              </row>
+<row>
+                <cell>
+                  <code>Cc</code>
+                </cell>
+                <cell>Other, control</cell>
+              </row>
+<row>
+                <cell>
+                  <code>Cf</code>
+                </cell>
+                <cell>Other, format</cell>
+              </row>
+<row>
+                <cell>
+                  <code>Cs</code>
+                </cell>
+                <cell>Other, surrogate</cell>
+              </row>
+<row>
+                <cell>
+                  <code>Co</code>
+                </cell>
+                <cell>Other, private use</cell>
+              </row>
+<row>
+                <cell>
+                  <code>Cn</code>
+                </cell>
+                <cell>Other, not assigned</cell>
+              </row>
 </table>
 	 </item>
-	 <label>directional-category</label> 
+	 <label>Bidi_Class</label> 
 <item>This property applies to all Unicode characters. It governs the
 application of the algorithm for bi-directional behaviour, as further
 specified in Unicode Annex 9, <title>The Bidirectional
 Algorithm</title>. The following 19 different values are currently
 defined for this property in <ref target="#WD-bibl-01">Davis et al (2006)</ref>:
 <table>
-<row><cell><code>L</code></cell><cell>left to right</cell></row>
-<row><cell><code>LRE</code></cell><cell>left to right embedding</cell></row>
-<row><cell><code>LRO</code></cell><cell>left to right override</cell></row>
-<row><cell><code>R</code></cell><cell>right to left</cell></row>
-<row><cell><code>AL</code></cell><cell>right to left Arabic</cell></row>
-<row><cell><code>RLE</code></cell><cell>right to left embedding</cell></row>
-<row><cell><code>RLO</code></cell><cell>right to left override</cell></row>
-<row><cell><code>PDF</code></cell><cell>Pop Directional Format</cell></row>
-<row><cell><code>EN</code></cell><cell>European Number</cell></row>
-<row><cell><code>ES</code></cell><cell>European Number Separator</cell></row>
-<row><cell><code>ET</code></cell><cell>European Number Terminator</cell></row>
-<row><cell><code>AN</code></cell><cell>Arabic Number</cell></row>
-<row><cell><code>CS</code></cell><cell>Common Number Separator</cell></row>
-<row><cell><code>NSM</code></cell><cell>Non-spacing Mark</cell></row>
-<row><cell><code>BN</code></cell><cell>Boundary Neutral</cell></row>
-<row><cell><code>B</code></cell><cell>Paragraph separator</cell></row>
-<row><cell><code>S</code></cell><cell>Segment separator</cell></row>
-<row><cell><code>WS</code></cell><cell>Whitespace</cell></row>
-<row><cell><code>ON</code></cell><cell>Other neutrals</cell></row>
-</table></item>
-	 <label>canonical-combining-class</label> <item>This
+<row>
+                <cell>
+                  <code>L</code>
+                </cell>
+                <cell>left to right</cell>
+              </row>
+<row>
+                <cell>
+                  <code>LRE</code>
+                </cell>
+                <cell>left to right embedding</cell>
+              </row>
+<row>
+                <cell>
+                  <code>LRO</code>
+                </cell>
+                <cell>left to right override</cell>
+              </row>
+<row>
+                <cell>
+                  <code>R</code>
+                </cell>
+                <cell>right to left</cell>
+              </row>
+<row>
+                <cell>
+                  <code>AL</code>
+                </cell>
+                <cell>right to left Arabic</cell>
+              </row>
+<row>
+                <cell>
+                  <code>RLE</code>
+                </cell>
+                <cell>right to left embedding</cell>
+              </row>
+<row>
+                <cell>
+                  <code>RLO</code>
+                </cell>
+                <cell>right to left override</cell>
+              </row>
+<row>
+                <cell>
+                  <code>PDF</code>
+                </cell>
+                <cell>Pop Directional Format</cell>
+              </row>
+<row>
+                <cell>
+                  <code>EN</code>
+                </cell>
+                <cell>European Number</cell>
+              </row>
+<row>
+                <cell>
+                  <code>ES</code>
+                </cell>
+                <cell>European Number Separator</cell>
+              </row>
+<row>
+                <cell>
+                  <code>ET</code>
+                </cell>
+                <cell>European Number Terminator</cell>
+              </row>
+<row>
+                <cell>
+                  <code>AN</code>
+                </cell>
+                <cell>Arabic Number</cell>
+              </row>
+<row>
+                <cell>
+                  <code>CS</code>
+                </cell>
+                <cell>Common Number Separator</cell>
+              </row>
+<row>
+                <cell>
+                  <code>NSM</code>
+                </cell>
+                <cell>Non-spacing Mark</cell>
+              </row>
+<row>
+                <cell>
+                  <code>BN</code>
+                </cell>
+                <cell>Boundary Neutral</cell>
+              </row>
+<row>
+                <cell>
+                  <code>B</code>
+                </cell>
+                <cell>Paragraph separator</cell>
+              </row>
+<row>
+                <cell>
+                  <code>S</code>
+                </cell>
+                <cell>Segment separator</cell>
+              </row>
+<row>
+                <cell>
+                  <code>WS</code>
+                </cell>
+                <cell>Whitespace</cell>
+              </row>
+<row>
+                <cell>
+                  <code>ON</code>
+                </cell>
+                <cell>Other neutrals</cell>
+              </row>
+</table>
+          </item>
+	 <label>Canonical_Combining_Class</label> <item>This
 	  property exists for characters that are not used
 	  independently, but in combination with other characters, for
 	  example the strokes making up CJK (Chinese, Japanese, and Korean) characters.  It
@@ -426,34 +673,165 @@ defined for this property in <ref target="#WD-bibl-01">Davis et al (2006)</ref>:
 	  values are defined in  the Unicode Standard: (see <ref target="http://www.unicode.org/reports/tr44/#Canonical_Combining_Class_Values">Unicode
 Character Database: Canonical Combining Class Values</ref>); these were taken from version 5.0:
 <table>
-<row><cell><code>0</code></cell><cell>Spacing, split, enclosing, reordrant, and Tibetan subjoined </cell></row>
-<row><cell><code>1</code></cell><cell>Overlays and interior </cell></row>
-<row><cell><code>7</code></cell><cell>Nuktas </cell></row>
-<row><cell><code>8</code></cell><cell>Hiragana/Katakana voicing marks </cell></row>
-<row><cell><code>9</code></cell><cell>Viramas </cell></row>
-<row><cell><code>10</code></cell><cell>Start of fixed position classes </cell></row>
-<row><cell><code>199</code></cell><cell>End of fixed position classes </cell></row>
-<row><cell><code>200</code></cell><cell>Below left attached </cell></row>
-<row><cell><code>202</code></cell><cell>Below attached </cell></row>
-<row><cell><code>204</code></cell><cell>Below right attached </cell></row>
-<row><cell><code>208</code></cell><cell>Left attached (reordrant around single base character) </cell></row>
-<row><cell><code>210</code></cell><cell>Right attached </cell></row>
-<row><cell><code>212</code></cell><cell>Above left attached </cell></row>
-<row><cell><code>214</code></cell><cell>Above attached </cell></row>
-<row><cell><code>216</code></cell><cell>Above right attached </cell></row>
-<row><cell><code>218</code></cell><cell>Below left </cell></row>
-<row><cell><code>220</code></cell><cell>Below </cell></row>
-<row><cell><code>222</code></cell><cell>Below right </cell></row>
-<row><cell><code>224</code></cell><cell>Left (reordrant around single base character) </cell></row>
-<row><cell><code>226</code></cell><cell>Right </cell></row>
-<row><cell><code>228</code></cell><cell>Above left </cell></row>
-<row><cell><code>230</code></cell><cell>Above </cell></row>
-<row><cell><code>232</code></cell><cell>Above right </cell></row>
-<row><cell><code>233</code></cell><cell>Double below </cell></row>
-<row><cell><code>234</code></cell><cell>Double above </cell></row>
-<row><cell><code>240</code></cell><cell>Below (iota subscript) </cell></row>
-</table></item>
-<label>character-decomposition-mapping</label> 
+<row>
+                <cell>
+                  <code>0</code>
+                </cell>
+                <cell>Spacing, split, enclosing, reordrant, and Tibetan subjoined </cell>
+              </row>
+<row>
+                <cell>
+                  <code>1</code>
+                </cell>
+                <cell>Overlays and interior </cell>
+              </row>
+<row>
+                <cell>
+                  <code>7</code>
+                </cell>
+                <cell>Nuktas </cell>
+              </row>
+<row>
+                <cell>
+                  <code>8</code>
+                </cell>
+                <cell>Hiragana/Katakana voicing marks </cell>
+              </row>
+<row>
+                <cell>
+                  <code>9</code>
+                </cell>
+                <cell>Viramas </cell>
+              </row>
+<row>
+                <cell>
+                  <code>10</code>
+                </cell>
+                <cell>Start of fixed position classes </cell>
+              </row>
+<row>
+                <cell>
+                  <code>199</code>
+                </cell>
+                <cell>End of fixed position classes </cell>
+              </row>
+<row>
+                <cell>
+                  <code>200</code>
+                </cell>
+                <cell>Below left attached </cell>
+              </row>
+<row>
+                <cell>
+                  <code>202</code>
+                </cell>
+                <cell>Below attached </cell>
+              </row>
+<row>
+                <cell>
+                  <code>204</code>
+                </cell>
+                <cell>Below right attached </cell>
+              </row>
+<row>
+                <cell>
+                  <code>208</code>
+                </cell>
+                <cell>Left attached (reordrant around single base character) </cell>
+              </row>
+<row>
+                <cell>
+                  <code>210</code>
+                </cell>
+                <cell>Right attached </cell>
+              </row>
+<row>
+                <cell>
+                  <code>212</code>
+                </cell>
+                <cell>Above left attached </cell>
+              </row>
+<row>
+                <cell>
+                  <code>214</code>
+                </cell>
+                <cell>Above attached </cell>
+              </row>
+<row>
+                <cell>
+                  <code>216</code>
+                </cell>
+                <cell>Above right attached </cell>
+              </row>
+<row>
+                <cell>
+                  <code>218</code>
+                </cell>
+                <cell>Below left </cell>
+              </row>
+<row>
+                <cell>
+                  <code>220</code>
+                </cell>
+                <cell>Below </cell>
+              </row>
+<row>
+                <cell>
+                  <code>222</code>
+                </cell>
+                <cell>Below right </cell>
+              </row>
+<row>
+                <cell>
+                  <code>224</code>
+                </cell>
+                <cell>Left (reordrant around single base character) </cell>
+              </row>
+<row>
+                <cell>
+                  <code>226</code>
+                </cell>
+                <cell>Right </cell>
+              </row>
+<row>
+                <cell>
+                  <code>228</code>
+                </cell>
+                <cell>Above left </cell>
+              </row>
+<row>
+                <cell>
+                  <code>230</code>
+                </cell>
+                <cell>Above </cell>
+              </row>
+<row>
+                <cell>
+                  <code>232</code>
+                </cell>
+                <cell>Above right </cell>
+              </row>
+<row>
+                <cell>
+                  <code>233</code>
+                </cell>
+                <cell>Double below </cell>
+              </row>
+<row>
+                <cell>
+                  <code>234</code>
+                </cell>
+                <cell>Double above </cell>
+              </row>
+<row>
+                <cell>
+                  <code>240</code>
+                </cell>
+                <cell>Below (iota subscript) </cell>
+              </row>
+</table>
+          </item>
+<label>Decomposition_Mapping</label> 
           <item>This property is defined for characters,
 	  which may be decomposed, for example to a canonical form
 	  plus a typographic variation of some kind. For such characters the Unicode standard  specifies both
@@ -462,25 +840,105 @@ Character Database: Canonical Combining Class Values</ref>); these were taken fr
 	  mapped in the way specified by the decomposition type). The
 	  following types of mapping are defined in the Unicode Standard:
 <table>
-<row><cell><code>font</code></cell><cell>   A font variant (e.g. a blackletter form)</cell></row>
-<row><cell><code>noBreak</code></cell><cell>   A no-break version of a space or hyphen</cell></row>
-<row><cell><code>initial</code></cell><cell>   An initial presentation form (Arabic)</cell></row>
-<row><cell><code>medial</code></cell><cell>   A medial presentation form (Arabic)</cell></row>
-<row><cell><code>final</code></cell><cell>   A final presentation form (Arabic)</cell></row>
-<row><cell><code>isolated</code></cell><cell>   An isolated presentation form (Arabic)</cell></row>
-<row><cell><code>circle</code></cell><cell>   An encircled form</cell></row>
-<row><cell><code>super</code></cell><cell>   A superscript form</cell></row>
-<row><cell><code>sub</code></cell><cell>   A subscript form</cell></row>
-<row><cell><code>vertical</code></cell><cell>   A vertical layout presentation form</cell></row>
-<row><cell><code>wide</code></cell><cell>   A wide (or zenkaku) compatibility character</cell></row>
-<row><cell><code>narrow</code></cell><cell>   A narrow (or hankaku) compatibility character</cell></row>
-<row><cell><code>small</code></cell><cell>   A small variant form (CNS compatibility)</cell></row>
-<row><cell><code>square</code></cell><cell>   A CJK squared font variant</cell></row>
-<row><cell><code>fraction</code></cell><cell>   A vulgar fraction form</cell></row>
-<row><cell><code>compat</code></cell><cell>   Otherwise-unspecified compatibility character</cell></row>
+<row>
+                <cell>
+                  <code>font</code>
+                </cell>
+                <cell>   A font variant (e.g. a blackletter form)</cell>
+              </row>
+<row>
+                <cell>
+                  <code>noBreak</code>
+                </cell>
+                <cell>   A no-break version of a space or hyphen</cell>
+              </row>
+<row>
+                <cell>
+                  <code>initial</code>
+                </cell>
+                <cell>   An initial presentation form (Arabic)</cell>
+              </row>
+<row>
+                <cell>
+                  <code>medial</code>
+                </cell>
+                <cell>   A medial presentation form (Arabic)</cell>
+              </row>
+<row>
+                <cell>
+                  <code>final</code>
+                </cell>
+                <cell>   A final presentation form (Arabic)</cell>
+              </row>
+<row>
+                <cell>
+                  <code>isolated</code>
+                </cell>
+                <cell>   An isolated presentation form (Arabic)</cell>
+              </row>
+<row>
+                <cell>
+                  <code>circle</code>
+                </cell>
+                <cell>   An encircled form</cell>
+              </row>
+<row>
+                <cell>
+                  <code>super</code>
+                </cell>
+                <cell>   A superscript form</cell>
+              </row>
+<row>
+                <cell>
+                  <code>sub</code>
+                </cell>
+                <cell>   A subscript form</cell>
+              </row>
+<row>
+                <cell>
+                  <code>vertical</code>
+                </cell>
+                <cell>   A vertical layout presentation form</cell>
+              </row>
+<row>
+                <cell>
+                  <code>wide</code>
+                </cell>
+                <cell>   A wide (or zenkaku) compatibility character</cell>
+              </row>
+<row>
+                <cell>
+                  <code>narrow</code>
+                </cell>
+                <cell>   A narrow (or hankaku) compatibility character</cell>
+              </row>
+<row>
+                <cell>
+                  <code>small</code>
+                </cell>
+                <cell>   A small variant form (CNS compatibility)</cell>
+              </row>
+<row>
+                <cell>
+                  <code>square</code>
+                </cell>
+                <cell>   A CJK squared font variant</cell>
+              </row>
+<row>
+                <cell>
+                  <code>fraction</code>
+                </cell>
+                <cell>   A vulgar fraction form</cell>
+              </row>
+<row>
+                <cell>
+                  <code>compat</code>
+                </cell>
+                <cell>   Otherwise-unspecified compatibility character</cell>
+              </row>
 </table>
 </item>
-	 <label>numeric-value</label> <item>This property applies for
+	 <label>Numeric_Value</label> <item>This property applies for
 	 any character which expresses any kind of numeric value. Its
 	 value is the intended value in decimal notation.</item>
 <label>mirrored</label> <item>The mirrored
@@ -488,11 +946,12 @@ Character Database: Canonical Combining Class Values</ref>); these were taken fr
 	   as U+0028, <code>OPENING PARENTHESIS</code> independent of
 	 the text direction: it has the value <code>Y</code>
 (character is mirrored) or <code>N</code> (code is not mirrored).</item>
-	</list></p>
+	</list>
+      </p>
 <p>The Unicode Standard also defines a set of informative (but non-normative)
 properties for Unicode characters.  If encoders want to provide such
 properties, they may be included using the suggested Unicode name,
-tagged using the <gi>unicodeName</gi> element. However, encoders may
+tagged using the <gi>unicodeName</gi>, or <gi>uniHan</gi> element. However, encoders may
 also supply other locally-defined properties, which must be named using
 the <gi>localName</gi> element to distinguish them. If a Unicode name
 exists for a given property, it should however always be preferred to
@@ -521,7 +980,8 @@ which are not specified by the Unicode Standard.</p>
 <p>Assuming that we wish to distinguish the variant glyphs from the
 standard representation for the character concerned, we will need to
 define distinct <gi>glyph</gi> elements, one for each of the forms of
-the letter we wish to distinguish: <egXML xmlns="http://www.tei-c.org/ns/Examples" source="#NONE"><charDecl>
+the letter we wish to distinguish: <egXML xmlns="http://www.tei-c.org/ns/Examples" source="#NONE">
+        <charDecl>
   <glyph xml:id="r1">
   <glyphName>LATIN SMALL LETTER R WITH ONE FUNNY STROKE</glyphName>
    <charProp>
@@ -544,21 +1004,26 @@ the letter we wish to distinguish: <egXML xmlns="http://www.tei-c.org/ns/Example
      <egXML xmlns="http://www.tei-c.org/ns/Examples" source="#NONE">
     <p>Wo<g ref="#r1">r</g>ds in this 
       manusc<g ref="#r2">r</g>ipt are sometimes
-      written in a funny way.</p> </egXML></p>
+      written in a funny way.</p> </egXML>
+    </p>
     <p>
      As can be seen in this example, the <gi>glyph</gi> element pointed
      to from the <gi>g</gi> element will be interpreted as an
      annotation on the content of the element <gi>g</gi>.  This mechanism
      can be used to represent common manuscript abbreviations or ligatures, as in the
      following examples:
-<egXML xmlns="http://www.tei-c.org/ns/Examples" source="#NONE"><p> ... <g ref="#Filig">Fi</g>lthy riches...</p>
+<egXML xmlns="http://www.tei-c.org/ns/Examples" source="#NONE">
+        <p> ... <g ref="#Filig">Fi</g>lthy riches...</p>
 <!-- in the charDecl -->
   <glyph xml:id="Filig">
    <glyphName>LATIN UPPER F AND LATIN LOWER I LIGATURE</glyphName>  
    <figure><graphic url="Filig.png"/></figure>
  </glyph>
 </egXML>
-<egXML xmlns="http://www.tei-c.org/ns/Examples" source="#NONE"><p> ... <abbr><g ref="#per">per</g></abbr> ardua</p>
+<egXML xmlns="http://www.tei-c.org/ns/Examples" source="#NONE">
+        <p> ... <abbr>
+            <g ref="#per">per</g>
+          </abbr> ardua</p>
 <!-- in the charDecl -->
   <glyph xml:id="per">
    <glyphName>LATIN ABBREVIATION PER</glyphName>  
@@ -686,7 +1151,8 @@ Therefore, the recommended
 representation is to use the <gi>g</gi> element defined by
 the module defined in this chapter: <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:lang="und" source="#NONE"><g ref="#ydotacute"/></egXML>. This makes it possible for the encoder to
 provide useful documentation for the particular character or glyph so referenced:
-<egXML xmlns="http://www.tei-c.org/ns/Examples" source="#NONE"><char xml:id="ydotacute">
+<egXML xmlns="http://www.tei-c.org/ns/Examples" source="#NONE">
+        <char xml:id="ydotacute">
        <charName>LATIN SMALL LETTER Y WITH DOT ABOVE AND
        ACUTE</charName>
      <charProp>
@@ -694,7 +1160,8 @@ provide useful documentation for the particular character or glyph so referenced
        <value>ydotacute</value>
      </charProp>
      <mapping type="composed">&amp;#x0079;&amp;#x0307;&amp;#x0301;</mapping>
-     <mapping type="PUA">U+E0A4</mapping> </char></egXML> This
+     <mapping type="PUA">U+E0A4</mapping> </char>
+      </egXML> This
      definition specifies the mapping between this composed character
      and the individual Unicode-defined code points which make it
      up. It also supplies a single locally-defined property
@@ -702,7 +1169,13 @@ provide useful documentation for the particular character or glyph so referenced
      purpose of which is to supply a recommended character entity name
      for the character.
 </p>
-<p>Under certain circumstances, Chinese Han characters can be written
+<p>For Han characters, Unicode provides dedicated symbols to capture the composition in Ideographic Description Sequences (IDS). Encoders are strongly encouraged to provide IDS for each variant ideograph in the header component of the gaiji module to faciliated greater human and machine readability of rare or unencoded characters, as in the following example:
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" source="#NONE">
+      <mapping type="IDS">⿻人為</mapping>
+      <mapping type="standard">偽</mapping>
+    </egXML>
+    The composition rules and further examples appear in <ref target="https://www.unicode.org/versions/Unicode11.0.0/ch18.pdf#G28626">Chapter 18.2: Ideographic Description Characters</ref> of the Unicode Standard. Editors should be aware that different sequences can accurately describe the same character. In the example the character "人" (U+4EBA) could have been substituted with "亻" (U+4EBB). Local preferences about how sequences are constructed should be documented in the <ptr target="#HD5"/>. Additionally, a number of online services, such as <ref target="https://chise.org"/>, offer quering and retrieving IDS, which facilitate a greater degree of stablilty across different applications.</p>
+    <p>Under certain circumstances, Chinese Han characters can be written
     within a circle.  Rather than considering this as simply an aspect of the
     rendering, an encoder may wish to treat such circled characters as
     entirely distinct  derived characters. For a given character
@@ -710,10 +1183,11 @@ provide useful documentation for the particular character or glyph so referenced
     the circled variant might conveniently be represented as
     <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:lang="und" source="#NONE"> <g ref="#U4EBA-circled"/></egXML>, which references a
     definition such as the following:
-<egXML xmlns="http://www.tei-c.org/ns/Examples" source="#NONE"><char xml:id="U4EBA-circled">
+<egXML xmlns="http://www.tei-c.org/ns/Examples" source="#NONE">
+        <char xml:id="U4EBA-circled">
   <charName>CIRCLED IDEOGRAPH</charName>
   <charProp>
-    <unicodeName>character-decomposition-mapping</unicodeName>
+    <unicodeName>Decomposition_Mapping</unicodeName>
     <value>circle</value>
   </charProp>
   <charProp>
@@ -726,7 +1200,9 @@ provide useful documentation for the particular character or glyph so referenced
   <mapping type="PUA">
    &amp;#xE000;
   </mapping>
- </char></egXML></p>
+ </char>
+      </egXML>
+    </p>
 <p>In this example, the <soCalled>circled ideograph</soCalled>
 character has been defined with two mappings, and with two
 properties. The two properties are the Unicode-defined
@@ -969,7 +1445,8 @@ of a document will probably include many other properties of course. </p>
                   </p>
    <p/>
    <p>We might encode this as follows: </p>
-                                 <egXML xmlns="http://www.tei-c.org/ns/Examples" source="#WD-BASHO"><div>
+                                 <egXML xmlns="http://www.tei-c.org/ns/Examples" source="#WD-BASHO">
+        <div>
  <lg xml:lang="ja" style="writing-mode: vertical-rl">
  <l>古池や</l>
  <l>蛙</l>
@@ -986,7 +1463,8 @@ of a document will probably include many other properties of course. </p>
  <l>and a frog dives in—</l>
  <l>"Splash"!</l>
  </lg>
-</div></egXML>
+</div>
+      </egXML>
    <p>For the sake of simplicity, we have not attempted to capture in
    this encoding such aspects as the indenting of lines in the first
    Japanese version, or the central alignment of the other two
@@ -1019,7 +1497,8 @@ of a document will probably include many other properties of course. </p>
    <p>
                      <figure>
                         <graphic width="500px" height="624px" url="Images/ja_vertical_indonesian_frag.jpg"/>
-<head>Detail from p.62 of <title xml:lang="ja">インドネシア語". 崎山理. 1985. 外国語との対照  II. 講座日本語学 11.</title></head>
+<head>Detail from p.62 of <title xml:lang="ja">インドネシア語". 崎山理. 1985. 外国語との対照  II. 講座日本語学 11.</title>
+          </head>
                      </figure>
                   </p>
 
@@ -1034,7 +1513,8 @@ of a document will probably include many other properties of course. </p>
  <label xml:lang="id">baru</label>
  <item>「新しい、ばかい」</item>
  <!-- ... -->
-</list></egXML>
+</list>
+      </egXML>
    <p>The rule <code>text-orientation: mixed</code> specifies that
    <quote>characters from horizontal-only scripts are set sideways,
    i.e. 90° clockwise from their standard orientation in horizontal
@@ -1087,7 +1567,9 @@ of a document will probably include many other properties of course. </p>
      bottom-to-top, to conserve space on the page. To describe this sort of phenomenon, 
      we can use the <code>text-orientation</code> property again: </p>
                  
-   <p><code>text-orientation: mixed | upright | sideways-right | sideways-left | sideways | use-glyph-orientation</code></p>
+   <p>
+        <code>text-orientation: mixed | upright | sideways-right | sideways-left | sideways | use-glyph-orientation</code>
+      </p>
                  
    <p>For full details on this property, we refer the reader to the CSS Writing Modes specification. 
      For the present example, we will make use only of the <soCalled>sideways-left</soCalled> value, 
@@ -1212,7 +1694,9 @@ of a document will probably include many other properties of course. </p>
    <p>The <code>transform</code> property takes as its value one or more of the transform functions, 
      one of which is the function <code>rotateZ()</code>:</p>
               
-                           <egXML xmlns="http://www.tei-c.org/ns/Examples" source="#NONE"><ab style="transform:rotateZ(-45deg)">TEI-C.ORG</ab></egXML>
+                           <egXML xmlns="http://www.tei-c.org/ns/Examples" source="#NONE">
+      <ab style="transform:rotateZ(-45deg)">TEI-C.ORG</ab>
+    </egXML>
               
    <p>Any rotation must take place clockwise around an axis positioned relative 
      to the element being rotated, and the <code>transform-origin</code> property 
@@ -1230,7 +1714,8 @@ of a document will probably include many other properties of course. </p>
                         <graphic url="Images/rotation_on_y_axis.png"/>
                      </figure>
                   </p>
-                                 <egXML xmlns="http://www.tei-c.org/ns/Examples" source="#NONE"> <ab style="transform:rotateY(45deg)">TEI-C.ORG</ab></egXML>
+                                 <egXML xmlns="http://www.tei-c.org/ns/Examples" source="#NONE"> <ab style="transform:rotateY(45deg)">TEI-C.ORG</ab>
+    </egXML>
               
    <p>These are obviously trivial examples, but similar features do appear in historical texts. 
      George Herbert's <title level="m">The Temple</title> includes two stanzas headed 
@@ -1250,7 +1735,8 @@ of a document will probably include many other properties of course. </p>
  <l>My tender age in ſorrow did beginne:</l>
  <l>And ſtill with ſickneſſes and ſhame</l>
  <!-- ... -->
- </lg></egXML>
+ </lg>
+    </egXML>
    <p>We might also argue that this is in fact a vertical writing
    mode by supplying <code>writing-mode: vertical-rl;
    text-orientation: sideways-right</code> as the value for the
@@ -1275,13 +1761,17 @@ precinct at Dodona. (L.H. Jeffery Archive)</head>
    <p>This might be transcribed as follows (ignoring word boundaries for the moment): </p>
    <egXML xmlns="http://www.tei-c.org/ns/Examples" source="#WD-BOUS"> <ab>
  <lb/>ΗΕΡΜΟΝΤΙΝA
- <lb/><seg style="rotateY(180deg)">ΚΑΘΕΟΝΠΟΤΘΕΜ</seg>
+ <lb/>
+        <seg style="rotateY(180deg)">ΚΑΘΕΟΝΠΟΤΘΕΜ</seg>
  <lb/>ΕΝΟΣΥΕΝΕΑϜ
- <lb/><seg style="rotateY(180deg)">ΟΙΥΕΝΟΙΤΙΕΚΚ</seg>
+ <lb/>
+        <seg style="rotateY(180deg)">ΟΙΥΕΝΟΙΤΙΕΚΚ</seg>
  <lb/>ΡΕΤΑΙΑΣΟΝΑ
- <lb/><seg style="rotateY(180deg)">ΣΙΜΟΣΟΤΤΑΙΕ</seg>
+ <lb/>
+        <seg style="rotateY(180deg)">ΣΙΜΟΣΟΤΤΑΙΕ</seg>
  <lb/>ΑΣΣΑΙ
- </ab></egXML>
+ </ab>
+    </egXML>
               <p>The 180-degree rotation around the Y (vertical) axis here 
      describes what is happening in the RTL  line in boustrophedon; the order of glyphs 
      is reversed, and so is their individual orientation (in fact, we see them 
@@ -1328,7 +1818,8 @@ precinct at Dodona. (L.H. Jeffery Archive)</head>
 </div>
 
 
-<div type="div2" xml:id="WSD-DEF"><head>Formal Definition</head>
+<div type="div2" xml:id="WSD-DEF">
+    <head>Formal Definition</head>
 <p>The gaiji module described in this chapter makes available the following
 components:
 <moduleSpec xml:id="DWD" ident="gaiji">

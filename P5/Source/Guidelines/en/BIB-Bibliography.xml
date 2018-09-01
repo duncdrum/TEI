@@ -1846,17 +1846,6 @@ another uncredited "action movie" The Run -->
           </imprint>
         </monogr>
       </biblStruct>
-      <biblStruct xml:id="CH-BIBL-3">
-        <monogr>
-          <title>The Unicode Standard, Version 5.0</title>
-          <ptr target="http://www.unicode.org/"/>
-          <author>Unicode Consortium</author>
-          <imprint>
-            <publisher>Addison-Wesley Professional</publisher>
-            <date>2006</date>
-          </imprint>
-        </monogr>
-      </biblStruct>
       <biblStruct xml:id="CH-BIBL-4">
         <monogr>
           <editor>
