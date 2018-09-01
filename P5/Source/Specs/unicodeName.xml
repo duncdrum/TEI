@@ -1,10 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?><!--
-Copyright TEI Consortium. 
-Dual-licensed under CC-by and BSD2 licences 
-See the file COPYING.txt for details
-$Date$
-$Id$
---><?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?><elementSpec xmlns="http://www.tei-c.org/ns/1.0" module="gaiji" ident="unicodeName" xml:id="UNICODENAME">
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Copyright TEI Consortium.  Dual-licensed under CC-by and BSD2 licences See the file COPYING.txt for details $Date$ $Id$ -->
+
+<?xml-model href="http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec ident="unicodeName" module="gaiji" xml:id="UNICODENAME" xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:rng="http://relaxng.org/ns/structure/1.0">
   <gloss versionDate="2007-07-04" xml:lang="en">unicode property name</gloss>
   <gloss versionDate="2018-08-23" xml:lang="de">unicode Eigenschaftsname</gloss>
   <gloss versionDate="2007-12-20" xml:lang="ko">유니코드 특성명</gloss>
@@ -17,34 +15,276 @@ $Id$
   <desc versionDate="2007-12-20" xml:lang="ko">등록된 유니코드의 규범적 또는 제보적 특성의 이름을 포함한다.</desc>
   <desc versionDate="2007-05-02" xml:lang="zh-TW">包含一個統一碼規範性質之註冊名稱。</desc>
   <desc versionDate="2008-04-05" xml:lang="ja">登録されているユニコード基準素性または参考素性の名前を示す．</desc>
-  <desc versionDate="2007-06-12" xml:lang="fr">contient le nom d'une propriété normative ou informative enregistré
-    en Unicode</desc>
-  <desc versionDate="2007-05-04" xml:lang="es">contiene el nombre de una normativa o propiedad
-    informativa registrada en Unicode.</desc>
-  <desc versionDate="2007-01-21" xml:lang="it">contiene il nome di una proprietà Unicode registrata
-    normativa o informativa.</desc>
+  <desc versionDate="2007-06-12" xml:lang="fr">contient le nom d'une propriété normative ou informative enregistré en Unicode</desc>
+  <desc versionDate="2007-05-04" xml:lang="es">contiene el nombre de una normativa o propiedad informativa registrada en Unicode.</desc>
+  <desc versionDate="2007-01-21" xml:lang="it">contiene il nome di una proprietà Unicode registrata normativa o informativa.</desc>
   <classes>
     <memberOf key="att.global"/>
   </classes>
+  <!-- see Utilities/unicodeName.xq -->
   <content>
-    <textNode/>
-    <!--s:assert> some schematron rules here</s:assert-->
-  </content>
+    <rng:group>
+      <rng:choice>
+        <rng:value>Age</rng:value>
+        <rng:value>age</rng:value>
+        <rng:value>AHex</rng:value>
+        <rng:value>Alpha</rng:value>
+        <rng:value>Alphabetic</rng:value>
+        <rng:value>ASCII_Hex_Digit</rng:value>
+        <rng:value>bc</rng:value>
+        <rng:value>Bidi_C</rng:value>
+        <rng:value>Bidi_Class</rng:value>
+        <rng:value>Bidi_Control</rng:value>
+        <rng:value>Bidi_M</rng:value>
+        <rng:value>Bidi_Mirrored</rng:value>
+        <rng:value>Bidi_Mirroring_Glyph</rng:value>
+        <rng:value>Bidi_Paired_Bracket</rng:value>
+        <rng:value>Bidi_Paired_Bracket_Type</rng:value>
+        <rng:value>blk</rng:value>
+        <rng:value>Block</rng:value>
+        <rng:value>bmg</rng:value>
+        <rng:value>bpb</rng:value>
+        <rng:value>bpt</rng:value>
+        <rng:value>Canonical_Combining_Class</rng:value>
+        <rng:value>Case_Folding</rng:value>
+        <rng:value>Case_Ignorable</rng:value>
+        <rng:value>Cased</rng:value>
+        <rng:value>ccc</rng:value>
+        <rng:value>CE</rng:value>
+        <rng:value>cf</rng:value>
+        <rng:value>Changes_When_Casefolded</rng:value>
+        <rng:value>Changes_When_Casemapped</rng:value>
+        <rng:value>Changes_When_Lowercased</rng:value>
+        <rng:value>Changes_When_NFKC_Casefolded</rng:value>
+        <rng:value>Changes_When_Titlecased</rng:value>
+        <rng:value>Changes_When_Uppercased</rng:value>
+        <rng:value>CI</rng:value>
+        <rng:value>Comp_Ex</rng:value>
+        <rng:value>Composition_Exclusion</rng:value>
+        <rng:value>CWCF</rng:value>
+        <rng:value>CWCM</rng:value>
+        <rng:value>CWKCF</rng:value>
+        <rng:value>CWL</rng:value>
+        <rng:value>CWT</rng:value>
+        <rng:value>CWU</rng:value>
+        <rng:value>Dash</rng:value>
+        <rng:value>Decomposition_Mapping</rng:value>
+        <rng:value>Decomposition_Type</rng:value>
+        <rng:value>Default_Ignorable_Code_Point</rng:value>
+        <rng:value>Dep</rng:value>
+        <rng:value>Deprecated</rng:value>
+        <rng:value>DI</rng:value>
+        <rng:value>Dia</rng:value>
+        <rng:value>Diacritic</rng:value>
+        <rng:value>dm</rng:value>
+        <rng:value>dt</rng:value>
+        <rng:value>ea</rng:value>
+        <rng:value>East_Asian_Width</rng:value>
+        <rng:value>EqUIdeo</rng:value>
+        <rng:value>Equivalent_Unified_Ideograph</rng:value>
+        <rng:value>Expands_On_NFC</rng:value>
+        <rng:value>Expands_On_NFD</rng:value>
+        <rng:value>Expands_On_NFKC</rng:value>
+        <rng:value>Expands_On_NFKD</rng:value>
+        <rng:value>Ext</rng:value>
+        <rng:value>Extender</rng:value>
+        <rng:value>FC_NFKC</rng:value>
+        <rng:value>FC_NFKC_Closure</rng:value>
+        <rng:value>Full_Composition_Exclusion</rng:value>
+        <rng:value>gc</rng:value>
+        <rng:value>GCB</rng:value>
+        <rng:value>General_Category</rng:value>
+        <rng:value>Gr_Base</rng:value>
+        <rng:value>Gr_Ext</rng:value>
+        <rng:value>Gr_Link</rng:value>
+        <rng:value>Grapheme_Base</rng:value>
+        <rng:value>Grapheme_Cluster_Break</rng:value>
+        <rng:value>Grapheme_Extend</rng:value>
+        <rng:value>Grapheme_Link</rng:value>
+        <rng:value>Hangul_Syllable_Type</rng:value>
+        <rng:value>Hex</rng:value>
+        <rng:value>Hex_Digit</rng:value>
+        <rng:value>hst</rng:value>
+        <rng:value>Hyphen</rng:value>
+        <rng:value>ID_Continue</rng:value>
+        <rng:value>ID_Start</rng:value>
+        <rng:value>IDC</rng:value>
+        <rng:value>Ideo</rng:value>
+        <rng:value>Ideographic</rng:value>
+        <rng:value>IDS</rng:value>
+        <rng:value>IDS_Binary_Operator</rng:value>
+        <rng:value>IDS_Trinary_Operator</rng:value>
+        <rng:value>IDSB</rng:value>
+        <rng:value>IDST</rng:value>
+        <rng:value>Indic_Positional_Category</rng:value>
+        <rng:value>Indic_Syllabic_Category</rng:value>
+        <rng:value>InPC</rng:value>
+        <rng:value>InSC</rng:value>
+        <rng:value>isc</rng:value>
+        <rng:value>ISO_Comment</rng:value>
+        <rng:value>Jamo_Short_Name</rng:value>
+        <rng:value>jg</rng:value>
+        <rng:value>Join_C</rng:value>
+        <rng:value>Join_Control</rng:value>
+        <rng:value>Joining_Group</rng:value>
+        <rng:value>Joining_Type</rng:value>
+        <rng:value>JSN</rng:value>
+        <rng:value>jt</rng:value>
+        <rng:value>kAccountingNumeric</rng:value>
+        <rng:value>kCompatibilityVariant</rng:value>
+        <rng:value>kIICore</rng:value>
+        <rng:value>kIRG_GSource</rng:value>
+        <rng:value>kIRG_HSource</rng:value>
+        <rng:value>kIRG_JSource</rng:value>
+        <rng:value>kIRG_KPSource</rng:value>
+        <rng:value>kIRG_KSource</rng:value>
+        <rng:value>kIRG_MSource</rng:value>
+        <rng:value>kIRG_TSource</rng:value>
+        <rng:value>kIRG_USource</rng:value>
+        <rng:value>kIRG_VSource</rng:value>
+        <rng:value>kOtherNumeric</rng:value>
+        <rng:value>kPrimaryNumeric</rng:value>
+        <rng:value>kRSUnicode</rng:value>
+        <rng:value>lb</rng:value>
+        <rng:value>lc</rng:value>
+        <rng:value>Line_Break</rng:value>
+        <rng:value>LOE</rng:value>
+        <rng:value>Logical_Order_Exception</rng:value>
+        <rng:value>Lower</rng:value>
+        <rng:value>Lowercase</rng:value>
+        <rng:value>Lowercase_Mapping</rng:value>
+        <rng:value>Math</rng:value>
+        <rng:value>na</rng:value>
+        <rng:value>na1</rng:value>
+        <rng:value>Name</rng:value>
+        <rng:value>Name_Alias</rng:value>
+        <rng:value>NChar</rng:value>
+        <rng:value>NFC_QC</rng:value>
+        <rng:value>NFC_Quick_Check</rng:value>
+        <rng:value>NFD_QC</rng:value>
+        <rng:value>NFD_Quick_Check</rng:value>
+        <rng:value>NFKC_Casefold</rng:value>
+        <rng:value>NFKC_CF</rng:value>
+        <rng:value>NFKC_QC</rng:value>
+        <rng:value>NFKC_Quick_Check</rng:value>
+        <rng:value>NFKD_QC</rng:value>
+        <rng:value>NFKD_Quick_Check</rng:value>
+        <rng:value>Noncharacter_Code_Point</rng:value>
+        <rng:value>nt</rng:value>
+        <rng:value>Numeric_Type</rng:value>
+        <rng:value>Numeric_Value</rng:value>
+        <rng:value>nv</rng:value>
+        <rng:value>OAlpha</rng:value>
+        <rng:value>ODI</rng:value>
+        <rng:value>OGr_Ext</rng:value>
+        <rng:value>OIDC</rng:value>
+        <rng:value>OIDS</rng:value>
+        <rng:value>OLower</rng:value>
+        <rng:value>OMath</rng:value>
+        <rng:value>Other_Alphabetic</rng:value>
+        <rng:value>Other_Default_Ignorable_Code_Point</rng:value>
+        <rng:value>Other_Grapheme_Extend</rng:value>
+        <rng:value>Other_ID_Continue</rng:value>
+        <rng:value>Other_ID_Start</rng:value>
+        <rng:value>Other_Lowercase</rng:value>
+        <rng:value>Other_Math</rng:value>
+        <rng:value>Other_Uppercase</rng:value>
+        <rng:value>OUpper</rng:value>
+        <rng:value>Pat_Syn</rng:value>
+        <rng:value>Pat_WS</rng:value>
+        <rng:value>Pattern_Syntax</rng:value>
+        <rng:value>Pattern_White_Space</rng:value>
+        <rng:value>PCM</rng:value>
+        <rng:value>Prepended_Concatenation_Mark</rng:value>
+        <rng:value>QMark</rng:value>
+        <rng:value>Quotation_Mark</rng:value>
+        <rng:value>Radical</rng:value>
+        <rng:value>Regional_Indicator</rng:value>
+        <rng:value>RI</rng:value>
+        <rng:value>SB</rng:value>
+        <rng:value>sc</rng:value>
+        <rng:value>scf</rng:value>
+        <rng:value>Script</rng:value>
+        <rng:value>Script_Extensions</rng:value>
+        <rng:value>scx</rng:value>
+        <rng:value>SD</rng:value>
+        <rng:value>Sentence_Break</rng:value>
+        <rng:value>Sentence_Terminal</rng:value>
+        <rng:value>Simple_Case_Folding</rng:value>
+        <rng:value>Simple_Lowercase_Mapping</rng:value>
+        <rng:value>Simple_Titlecase_Mapping</rng:value>
+        <rng:value>Simple_Uppercase_Mapping</rng:value>
+        <rng:value>slc</rng:value>
+        <rng:value>Soft_Dotted</rng:value>
+        <rng:value>stc</rng:value>
+        <rng:value>STerm</rng:value>
+        <rng:value>suc</rng:value>
+        <rng:value>tc</rng:value>
+        <rng:value>Term</rng:value>
+        <rng:value>Terminal_Punctuation</rng:value>
+        <rng:value>Titlecase_Mapping</rng:value>
+        <rng:value>uc</rng:value>
+        <rng:value>UIdeo</rng:value>
+        <rng:value>Unicode_1_Name</rng:value>
+        <rng:value>Unified_Ideograph</rng:value>
+        <rng:value>Upper</rng:value>
+        <rng:value>Uppercase</rng:value>
+        <rng:value>Uppercase_Mapping</rng:value>
+        <rng:value>Variation_Selector</rng:value>
+        <rng:value>Vertical_Orientation</rng:value>
+        <rng:value>vo</rng:value>
+        <rng:value>VS</rng:value>
+        <rng:value>WB</rng:value>
+        <rng:value>White_Space</rng:value>
+        <rng:value>Word_Break</rng:value>
+        <rng:value>WSpace</rng:value>
+        <rng:value>XID_Continue</rng:value>
+        <rng:value>XID_Start</rng:value>
+        <rng:value>XIDC</rng:value>
+        <rng:value>XIDS</rng:value>
+        <rng:value>XO_NFC</rng:value>
+        <rng:value>XO_NFD</rng:value>
+        <rng:value>XO_NFKC</rng:value>
+        <rng:value>XO_NFKD</rng:value>
+      </rng:choice>
+    </rng:group>
+    </content>
   <attList>
     <attDef ident="version" usage="opt">
-      <desc versionDate="2005-01-14" xml:lang="en">specifies the version number of the Unicode Standard in which this property name is
-        defined.</desc>
+      <desc versionDate="2005-01-14" xml:lang="en">specifies the version number of the Unicode Standard in which this property name is defined.</desc>
       <desc versionDate="2018-08-23" xml:lang="de">gibt die Versionsnummer des Unicode Standards an, in dem dieser Eigenschaftsname definiert ist.</desc>
       <desc versionDate="2007-12-20" xml:lang="ko">특성명이 정의된 표준 유니코드의 버전 숫자를 명시한다.</desc>
       <desc versionDate="2007-05-02" xml:lang="zh-TW">說明該性質名稱是定義在哪一版本的統一碼標準 (Unicode Standard) 中。</desc>
       <desc versionDate="2008-04-05" xml:lang="ja">当該素性名が定義されているユニコードの版番号を示す．</desc>
-      <desc versionDate="2007-06-12" xml:lang="fr">spécifie le numéro de version de la norme Unicode
-        où se trouve défini ce nom de propriété</desc>
-      <desc versionDate="2007-05-04" xml:lang="es">especifica el número de versión del Estándar de
-        Unicode en que este nombre de propiedad se ha definido.</desc>
-      <desc versionDate="2007-01-21" xml:lang="it">specifica il numero della versione dello standard
-        Unicode nel quale è definito il nome della proprietà.</desc>
-      <datatype><dataRef key="teidata.version"/></datatype>
+      <desc versionDate="2007-06-12" xml:lang="fr">spécifie le numéro de version de la norme Unicode où se trouve défini ce nom de propriété</desc>
+      <desc versionDate="2007-05-04" xml:lang="es">especifica el número de versión del Estándar de Unicode en que este nombre de propiedad se ha definido.</desc>
+      <desc versionDate="2007-01-21" xml:lang="it">specifica il numero della versione dello standard Unicode nel quale è definito il nome della proprietà.</desc>
+      <datatype>
+        <dataRef key="teidata.enumerated"/>
+      </datatype>
+    <valList type="closed">
+        <valItem ident="1.1"/>
+        <valItem ident="10.0"/>
+        <valItem ident="11.0"/>
+        <valItem ident="2.0"/>
+        <valItem ident="2.1"/>
+        <valItem ident="3.0"/>
+        <valItem ident="3.1"/>
+        <valItem ident="3.2"/>
+        <valItem ident="4.0"/>
+        <valItem ident="4.1"/>
+        <valItem ident="5.0"/>
+        <valItem ident="5.1"/>
+        <valItem ident="5.2"/>
+        <valItem ident="6.0"/>
+        <valItem ident="6.1"/>
+        <valItem ident="6.2"/>
+        <valItem ident="6.3"/>
+        <valItem ident="7.0"/>
+        <valItem ident="8.0"/>
+        <valItem ident="9.0"/>
+        <valItem ident="unassigned"/>
+      </valList>
     </attDef>
   </attList>
   <exemplum xml:lang="und">
@@ -53,6 +293,7 @@ $Id$
       <unicodeName>General_Category</unicodeName>
     </egXML>
   </exemplum>
+  <!-- Could not locate a source for I18n forms of property names and values -->
   <exemplum versionDate="2008-04-06" xml:lang="fr">
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
       <unicodeName>Decomposition_Mapping</unicodeName>
@@ -65,11 +306,11 @@ $Id$
   <remarks versionDate="2018-08-23" xml:lang="de">
     <p>Eine definitive Liste der aktuellen Unicode Eigenschaftsnamen wird vom Unicode Standard bereitgestellt.</p>
   </remarks>
-  <remarks xml:lang="fr" versionDate="2007-06-12">
+  <remarks versionDate="2007-06-12" xml:lang="fr">
     <p>Une liste fermée des noms de propriétés Unicode est donnée dans la norme Unicode.</p>
   </remarks>
-  <remarks xml:lang="ja" versionDate="2008-04-05">
-    <p> 現行のユニコード基準名のリストは，ユニコード規格にある． </p>
+  <remarks versionDate="2008-04-05" xml:lang="ja">
+    <p> 現行のユニコード基準名のリストは，ユニコード規格にある．</p>
   </remarks>
   <listRef>
     <ptr target="#ucsprops"/>
