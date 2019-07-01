@@ -338,8 +338,10 @@ a property which has already been identified in the Unicode Standard, use of the
 <p>The following attributes are used to record key-value pairs for character properties:
 <!-- TODO phase 2: is this the correct way of doing this? -->
 <specList>
-<specDesc key="name"/>
-<specDesc key="value"/>
+<specDesc key="unicodeProp"/>
+<specDesc key="unihanProp"/>
+<specDesc key="localProp"/>
+<!--<specDesc key="att.gaijiProp"/>-->
 </specList>
 For each property, the encoder must supply both a
 <gi>name</gi> and a <gi>value</gi>. In cases of boolean properties TEI requires an explict true or false <gi>value</gi> attribute:
@@ -711,7 +713,7 @@ The composition rules and further examples appear in <ref target="https://www.un
     definition such as the following:
 <egXML xmlns="http://www.tei-c.org/ns/Examples" source="#NONE"><char xml:id="U4EBA-circled">
   <charName>CIRCLED IDEOGRAPH</charName>
-  <unicodeProp name="Decomposition_mapping" value="cicle"/>
+  <unicodeProp name="Decomposition_Mapping" value="cicle"/>
   <localProp name="daikanwa" value="36"/>
   <mapping type="standard">
    &amp;#x4EBA;
@@ -1337,24 +1339,25 @@ components:
 The selection and combination of modules to form a TEI schema is described in
 <ptr target="#STIN"/>.
 </p>
-<specGrp>
+
+<specGrp xml:id="CAGD">
 
 <include xmlns="http://www.w3.org/2001/XInclude" href="../../Specs/g.xml"/>
 <include xmlns="http://www.w3.org/2001/XInclude" href="../../Specs/char.xml"/>
 <include xmlns="http://www.w3.org/2001/XInclude" href="../../Specs/charName.xml"/>
-<!-- <include xmlns="http://www.w3.org/2001/XInclude" href="../../Specs/charProp.xml"/> -->
+ <include xmlns="http://www.w3.org/2001/XInclude" href="../../Specs/charProp.xml"/> 
 <include xmlns="http://www.w3.org/2001/XInclude" href="../../Specs/charDecl.xml"/>
 <!-- duncdrum: Why should / can I not include the att class here??  -->
-<!-- <include xmlns="http://www.w3.org/2001/XInclude" href="../../Specs/att.gaijiProp.xml"/> -->
+<!-- <include xmlns="http://www.w3.org/2001/XInclude" href="../../Specs/att.gaijiProp.xml"/>  -->
 <include xmlns="http://www.w3.org/2001/XInclude" href="../../Specs/glyph.xml"/>
 <include xmlns="http://www.w3.org/2001/XInclude" href="../../Specs/glyphName.xml"/>
 <include xmlns="http://www.w3.org/2001/XInclude" href="../../Specs/localName.xml"/>
-<include xmlns="http://www.w3.org/2001/XInclude" href="../../Specs/localProp.xml"/>
 <include xmlns="http://www.w3.org/2001/XInclude" href="../../Specs/mapping.xml"/>
 <include xmlns="http://www.w3.org/2001/XInclude" href="../../Specs/unicodeName.xml"/>
 <include xmlns="http://www.w3.org/2001/XInclude" href="../../Specs/unihanProp.xml"/>
+<include xmlns="http://www.w3.org/2001/XInclude" href="../../Specs/localProp.xml"/>
 <include xmlns="http://www.w3.org/2001/XInclude" href="../../Specs/unicodeProp.xml"/>
-<!-- <include xmlns="http://www.w3.org/2001/XInclude" href="../../Specs/value.xml"/> -->
+ <include xmlns="http://www.w3.org/2001/XInclude" href="../../Specs/value.xml"/> 
 </specGrp>
 </div>
 </div>

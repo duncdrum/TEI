@@ -28,12 +28,12 @@ $Id$
   </content>
   <!-- TODO Phase 3: Mention conversion script as part of deprecation warning. #1805 -->
   <constraintSpec scheme="schematron" validUntil="2021-07-09"
-		  ident="unihan-phase2-deprecated" type="deprecationWarning">
+		  ident="unihan-phase2b-deprecated" type="deprecationWarning">
     <desc type="deprecationInfo" xml:lang="en"
-    versionDate="2018-07-01">Use <att>value</att> on either <tag>unicodeProp</tag>, <tag>localProp</tag>, or <tag>unihanProp</tag> to specify values for character or glyph properties.</desc>
+    versionDate="2019-07-01">Use the `value` attribute on either `unicodeProp`, `localProp`, or `unihanProp` to specify values for character or glyph properties.</desc>
     <constraint>
-      <sch:assert test="*">The use of the <tag>value</tag> element
-      is deprecated, and will be considered invalid after 2019-07-09. Use <att>value</att> on either <tag>unicodeProp</tag>, <tag>localProp</tag>, or <tag>unihanProp</tag> to specify values for character or glyph properties.</sch:assert>
+      <sch:assert test="*">The use of the `value` element
+      is deprecated, and will be considered invalid after 2021-07-09. Use `value` on either `unicodeProp`, `localProp`, or `unihanProp` to specify values for character or glyph properties.</sch:assert>
     </constraint>
   </constraintSpec>
   <exemplum xml:lang="en">

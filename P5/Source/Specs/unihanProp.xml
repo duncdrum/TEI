@@ -7,7 +7,7 @@
    <classes>
       <!-- This seems odd but matches to be deprecated unicodeName -->
       <memberOf key="att.global"/>
-      <memberOf key="att.gaijiProp"/>
+      <!-- <memberOf key="att.gaijiProp"/> -->
    </classes>
    <content>
       <empty/>

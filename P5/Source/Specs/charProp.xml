@@ -37,12 +37,12 @@ $Id$
   </content>
   <!-- TODO Phase 3: Mention conversion script as part of deprecation warning. #1805 -->
   <constraintSpec scheme="schematron" validUntil="2021-07-09"
-		  ident="unihan-phase2-deprecated" type="deprecationWarning">
+		  ident="unihan-phase2a-deprecated" type="deprecationWarning">
     <desc type="deprecationInfo" xml:lang="en"
-    versionDate="2018-07-01">Use either <tag>unicodeProp</tag>, <tag>localProp</tag>, or <tag>unihanProp</tag> to specify character or glyph properties.</desc>
+    versionDate="2019-07-01">Use either `unicodeProp`, `localProp`, or `unihanProp` to specify character or glyph properties.</desc>
     <constraint>
-      <sch:assert test="*">The use of the <tag>charProp</tag> element
-      is deprecated, and will be considered invalid after 2019-07-09. Use either <tag>unicodeProp</tag>, <tag>localProp</tag>, or <tag>unihanProp</tag> to specify character or glyph properties.</sch:assert>
+      <sch:assert test="*">The use of the `charProp` element
+      is deprecated, and will be considered invalid after 2021-07-09. Use either `unicodeProp`, `localProp`, or `unihanProp` to specify character or glyph properties.</sch:assert>
     </constraint>
   </constraintSpec>
   <exemplum xml:lang="und">
