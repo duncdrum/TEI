@@ -919,7 +919,7 @@
          </valList>
       </attDef>
       <attDef ident="name" usage="req">
-         <desc>specifies the normalized name of a unicode han database (unihan) property</desc>
+         <desc versionDate="2019-07-01" xml:lang="en">specifies the normalized name of a unicode han database (unihan) property</desc>
          <datatype>
             <dataRef key="teidata.xmlName"></dataRef>
          </datatype>
@@ -1023,7 +1023,7 @@
          </valList>
       </attDef>
       <attDef ident="value" usage="req">
-          <desc>specifies the value of a named unihan property</desc>
+         <desc versionDate="2019-07-01" xml:lang="en">specifies the value of a named unihan property</desc>
           <datatype>
               <dataRef key="teidata.word"/>
           </datatype>
