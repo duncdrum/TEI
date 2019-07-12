@@ -32,16 +32,24 @@ $Id$
   <content>
     <macroRef key="macro.xtext"/>
   </content>
+  <attList>
+    <attDef ident="codepoint" usage="opt">
+      <desc versionDate="2019-07-01" xml:lang="en">specifies the  value of a numerical codepoint for xml character references.</desc>
+      <datatype>
+        <dataRef key="teidata.text"/>
+      </datatype>
+    </attDef>
+  </attList>
   <exemplum xml:lang="en">
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
       <mapping type="modern">r</mapping>
-      <mapping type="standard">人</mapping>
+      <mapping type="standard" codepoint="20154">人</mapping>
     </egXML>
   </exemplum>
   <exemplum versionDate="2008-04-06" xml:lang="fr">
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
       <mapping type="modern">r</mapping>
-      <mapping type="standard">人</mapping>
+      <mapping type="standard" codepoint="20154">人</mapping>
     </egXML>
   </exemplum>
   <remarks versionDate="2017-05-11" xml:lang="en">
