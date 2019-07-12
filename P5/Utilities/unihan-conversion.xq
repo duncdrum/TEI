@@ -23,11 +23,11 @@ declare default element namespace "http://www.tei-c.org/ns/1.0";
 
 (:~
  : Helper functino to test expectec output of conversion function
- : 
+ :
  : @return true if conversion produces expected result
 :)
 declare function local:conversion-test() as xs:boolean {
-let $test-data := 
+let $test-data :=
 <charDecl>
  <char xml:id="U4EBA-circled">
  <charName>CIRCLED IDEOGRAPH</charName>
@@ -73,7 +73,7 @@ deep-equal(local:convert-props($test-data), $test-result)
 
 (:~
  : accepts arbitrary xml fragment and converts instances of 3.5.0 char / glyphProp syntax to new encoding.
- : The conditional for mapping is flitering based on Guidelines examples, in case of doubt 
+ : The conditional for mapping is flitering based on Guidelines examples, in case of doubt
  : numerical codepoints will be added.
  :
  : @see https://www.w3.org/TR/xquery-31/#doc-xquery31-StringConstructor
@@ -84,7 +84,7 @@ declare function local:convert-props($node as node()*) as item()* {
     for $n in $node
     return
         typeswitch($n)
-            case text() return ``[`{$n}`]`` 
+            case text() return ``[`{$n}`]``
             case comment() return $n
             case processing-instruction() return $n
             case element (charName) return element localProp {($n/@*, attribute name {'name'}, attribute value {$n})}
@@ -93,14 +93,10 @@ declare function local:convert-props($node as node()*) as item()* {
             case element (value) return ()
             case element (unicodeName) return element unicodeProp {($n/@*, attribute name {$n}, attribute value {$n/../value})}
             case element (localName) return element localProp {($n/@*, attribute name {$n}, attribute value {$n/../value})}
-            case element (mapping) return 
+            case element (mapping) return
                 if (starts-with(normalize-space($n), 'U+') or $n/@type[. = "IDS"] or starts-with(normalize-space($n), '&amp;'))
                 then (element mapping {($n/@*, local:convert-props($n/node()))})
                 else (element mapping {($n/@*,  attribute codepoint {string-to-codepoints(normalize-space($n))}, local:convert-props($n/node()))})
         default return element {name($n)} {($n/@*,  local:convert-props($n/node()))}
 
 };
-
-
-
-
