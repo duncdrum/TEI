@@ -16,8 +16,8 @@ declare default element namespace "http://www.tei-c.org/ns/1.0";
  : @see http://www.unicode.org/Public/11.0.0/ucd/PropertyAliases.txt
 :)
 declare variable $ucna:src-uri := 'http://www.unicode.org/Public/UCD/latest/ucd/PropertyAliases.txt';
-declare variable $ucna:ucd-rnc := 'http://www.unicode.org/reports/tr42/tr42-23.rnc';
-declare variable $ucna:ucd-rng := 'tr42-23.rng';
+declare variable $ucna:ucd-rnc := 'http://www.unicode.org/reports/tr42/tr42-26.rnc';
+declare variable $ucna:ucd-rng := 'tr42-26.rng';
 declare variable $ucna:ucd := doc($ucna:ucd-rng);
 declare variable $ucna:spec := doc('../Source/Specs/unicodeName.xml');
 declare variable $ucna:unihan := doc('../Source/Specs/uniHan.xml');
