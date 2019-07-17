@@ -621,7 +621,7 @@ is quite similar to the annotation of existing characters. The
 same element <gi>g</gi> is used to provide a link from the
 character instance in the text to a character definition provided
 within the <gi>charDecl</gi> element. This character definition
-takes the form of a <gi>char</gi> element.  The element <gi>g</gi>
+takes the form of a <gi>char</gi> element. The element <gi>g</gi>
 itself will usually be empty, but could contain a code point from
 the Private Use Area (PUA) of the Unicode Standard, which is an
 area set aside for the very purpose of privately adding new
@@ -631,7 +631,7 @@ characters are given in the following section.</p>
 precomposed form of a character that is encoded in Unicode only as a
 sequence of code points. For example, in Medieval
 Nordic material, a character looking like a lowercase letter Y with a
-dot and an acute-accent above it may be encountered so frequently that
+dot and an acute-accent above may be encountered so frequently that
 the encoder wishes to treat it as a single precomposed character with
 one single coded value. In the
 transcription concerned, the encoder enters this letter as
@@ -646,22 +646,28 @@ loses the fact that the sequence of composed characters is regarded as
 a single object; the second is not reliably portable.
 Therefore, the recommended
 representation is to use the <gi>g</gi> element defined by
-the module defined in this chapter: <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:lang="und" source="#NONE"><g ref="#ydotacute"/></egXML>. This makes it possible for the encoder to
+the module defined in this chapter:
 provide useful documentation for the particular character or glyph so referenced:
+  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:lang="und" source="#NONE"><g ref="#ydotacute"/></egXML> This makes it possible for the encoder to
 <egXML xmlns="http://www.tei-c.org/ns/Examples" source="#NONE"><char xml:id="ydotacute">
    <localProp name="name" value="LATIN SMALL LETTER Y WITH DOT ABOVE AND
    ACUTE"/>
    <localProp name="entitiy" value="ydotacute"/>
- <mapping type="composed">&amp;#x0079;&amp;#x0307;&amp;#x0301;</mapping>
+  <mapping type="composed" codepoint="121 775 769">&amp;#x0079;&amp;#x0307;&amp;#x0301;</mapping>
  <mapping type="PUA">U+E0A4</mapping> </char></egXML> This
- definition specifies the mapping between this composed character
- and the individual Unicode-defined code points which make it
+ definition specifies the mapping between this user-perceived composed character
+ and the grapheme cluster of Unicode code points which make it
  up. It also supplies a single locally-defined property
  (<soCalled>entity</soCalled>) for the character concerned, the
  purpose of which is to supply a recommended character entity name
- for the character.
+ for the character. When xml chacter references appear within <gi>mapping</gi> encoders are strongly encouraged to use
+  <att>codepoint</att> to supply the numercial (non-hex) code point value of each charater reference. By default, character references are automatically
+  expanded when processing xml, which can lead to undesirale side-effects on external systems, which are tricky to address without a non expanded referent for the offending code points.
 </p>
-<p>The composition rules for ideographic characters typically require more complex rules than the <code>&amp;ydotacute;</code> above. For these cases Unicode provides dedicated symbols to capture the composition in Ideographic Description Sequences (IDS). Encoders are strongly encouraged to provide IDS for each variant ideograph in the header component of the gaiji module to faciliated greater human and machine readability of rare or unencoded characters, as in the following example:
+   </div>
+     <div type="div3" xml:id="D25-45">
+<head>Adding Ideographic Characters</head>
+<p>The composition rules for ideographic characters typically require more complex rules than in the <code>&amp;ydotacute;</code> example above. For these cases Unicode provides dedicated symbols to capture the composition in Ideographic Description Sequences (IDS). IDS can capture character compositions that cannot be unambigoulsy expressed as Grapheme Clusters. While their use is not restricted to East Asian scripts, their use to describe variant ideographs facilitates greater human and machine readability of rare or unencoded characters, as in the following example:
 <egXML xmlns="http://www.tei-c.org/ns/Examples" source="#NONE">
 <glyph xml:id="U507D-var">
   <!-- more properties here -->
@@ -674,16 +680,15 @@ The composition rules and further examples appear in <ref target="https://www.un
 within a circle. Rather than considering this as simply an aspect of the rendering, an encoder may wish to treat such circled characters as entirely distinct derived characters. For a given character
 (say that represented by the numeric-character reference <code>&amp;#x4EBA;</code>)
 the circled variant might conveniently be represented as
-<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:lang="und" source="#NONE"> <g ref="#U4EBA-circled"/></egXML>, which references a
-definition such as the following:
+<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:lang="und" source="#NONE"> <g ref="#U4EBA-circled"/></egXML> which references a definition such as the following:
 <egXML xmlns="http://www.tei-c.org/ns/Examples" source="#NONE"><char xml:id="U4EBA-circled">
   <unicodeProp name="Decomposition_Mapping" value="cicle"/>
   <localProp name="name" value="CIRCLED IDEOGRAPH 36"/>
   <localProp name="daikanwa" value="36"/>
-  <mapping type="standard">
+  <mapping type="standard" codepoint="20154">
    &amp;#x4EBA;
   </mapping>
-  <mapping type="PUA">
+  <mapping type="PUA" codepoint="57344">
    &amp;#xE000;
   </mapping>
  </char></egXML></p>
@@ -693,7 +698,7 @@ properties. The two properties are the Unicode-defined
 character-decomposition which specifies that this is a circled
 character, using the appropriate terminology (see <ptr target="#ucsprops"/> above) and a locally defined property known as
 <soCalled>daikanwa</soCalled>. The two mappings indicate firstly that the standard form of this character is the character <code>&amp;#x4EBA;</code>, and secondly that the character used to represent this character locally is the PUA character  <code>&amp;#xE000;</code>. For convenience of local processing this PUA character may in fact appear as content of the <gi>g</gi> element. In general, however, the <gi>g</gi> element
-will be empty.</p>
+will be empty. The <att>codepoint</att> attribute appears here to help to further disambiguate, since <code>&amp;#x4EBA;</code> and <code>&amp;#x2F08</code> when expanded are indistinguishable.</p>
    </div>
    <div type="div2" xml:id="D25-50">
 <head>How to Use Code Points from the Private Use Area</head>
@@ -745,12 +750,8 @@ element; it will however normally be simpler to remove the
 elements which reference it by occurrences of the newly coded
 character. </p>
    </div>
-
-
 <div type="div2" xml:id="WDWM">
-   <head>
- Writing Modes</head>
-
+   <head>Writing Modes</head>
 <p>The scripts used for writing human languages vary not only in the
 glyphs they use, but also in the way (or ways) that those glyphs are
 arranged on the writing surface. For the majority of modern languages,
