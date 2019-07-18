@@ -9,6 +9,7 @@ declare namespace rng = "http://relaxng.org/ns/structure/1.0";
 
 declare default element namespace "http://www.tei-c.org/ns/1.0";
 
+(: TODO add test function to see if all props are accounted for :)
 
 (:~
  : we need to transform the compact schema into relax xml for processing.
@@ -45,14 +46,14 @@ declare variable $ucna:unihan := doc('../Source/Specs/uniHan.xml');
 :)
 declare function ucna:txt-2-xml($uri as xs:string) as element(root) {
     let $source := unparsed-text($uri)
-
+    
     (: make txt well-formed xml for processing :)
     let $lines := <root>{
             for $l in tokenize($source, '\n')
             return
                 <line>{$l}</line>
         }</root>
-
+    
     (: filter inlines  and empty :)
     let $filter1 := <root>{
             for $f in $lines/line
@@ -62,7 +63,7 @@ declare function ucna:txt-2-xml($uri as xs:string) as element(root) {
                 else
                     (<name>{$f/text()}</name>)
         }</root>
-
+    
     return
         <root>{
                 for $x in $filter1/name
@@ -87,9 +88,9 @@ declare function ucna:txt-2-xml($uri as xs:string) as element(root) {
 
 
 declare function ucna:write-uniName-odd() as element(valList) {
-
+    
     let $propAlias := ucna:txt-2-xml($ucna:src-uri)//pName[2]
-
+    
     return
         <valList
             type="closed">
@@ -125,20 +126,22 @@ declare function ucna:write-uniName-odd() as element(valList) {
 
 
 declare function ucna:write-uniName-rng() as element(rng:group) {
-
+    
     let $propAlias := ucna:txt-2-xml($ucna:src-uri)//pName[2]
     let $short := for $p in $propAlias
-        return
-            ucna:lookup-names($p)
+    return
+        ucna:lookup-names($p)
     let $distinct := distinct-values(($propAlias/text(), $short))
-
+    
     return
         <rng:group>
             <rng:choice>
-                { for $d in $distinct
-                order by lower-case($d)
-                return
-                    <rng:value>{$d}</rng:value>}
+                {
+                    for $d in $distinct
+                        order by lower-case($d)
+                    return
+                        <rng:value>{$d}</rng:value>
+                }
             </rng:choice>
         </rng:group>
 };
@@ -213,9 +216,9 @@ declare function ucna:strip-ns($n as node()) as node() {
  : @return the xml name of the provided the property name or alias
 :)
 declare function ucna:lookup-names($alias as xs:string) as item()* {
-
+    
     let $a-normal := ucna:normalize-string($alias)
-
+    
     let $lookup-prop :=
     for $a in ucna:txt-2-xml($ucna:src-uri)//pName
     return
@@ -224,7 +227,7 @@ declare function ucna:lookup-names($alias as xs:string) as item()* {
             ($a/..)
         else
             ()
-
+    
     return
         data($ucna:ucd//*[@name = $lookup-prop//pName]/@name)
 };
@@ -239,7 +242,7 @@ declare function ucna:lookup-names($alias as xs:string) as item()* {
  : @return a single ucd element containing a single character with the assigned properties
 :)
 declare function ucna:make-ucdchar($prop as xs:string, $val as xs:string) as element(ucd:ucd) {
-
+    
     element ucd:ucd {
         element ucd:repertoir {
             element ucd:char {
@@ -257,19 +260,19 @@ declare function ucna:make-ucdchar($prop as xs:string, $val as xs:string) as ele
  : #return  xs:boolean
 :)
 declare function ucna:test-specs() as xs:boolean* {
-
+    
     let $content := for $c in $ucna:spec//tei:content/tei:valList/*
     return
         ucna:strip-ns($c)
-
+    
     let $attDef := for $a in $ucna:spec//tei:attDef/tei:valList/*
     return
         ucna:strip-ns($a)
-
+    
     let $han := for $h in $ucna:unihan//tei:attDef/tei:valList/*
     return
         ucna:strip-ns($h)
-
+    
     return
         (try {
             exists($ucna:spec)
@@ -277,14 +280,14 @@ declare function ucna:test-specs() as xs:boolean* {
         catch * {
             'could not locate the unicodeName.xml spec file, maybe it was moved?'
         },
-
+        
         try {
             ucna:write-uniName-odd()//tei:valItem = $content
         }
         catch * {
             'the list of valid unicode name properties has changed'
         },
-
+        
         try {
             ucna:write-version-odd()//tei:valItem = $attDef and ucna:write-version-odd()//tei:valItem = $han
         }
@@ -301,11 +304,11 @@ declare function ucna:test-specs() as xs:boolean* {
  : USE WITH CAUTION
 :)
 declare %updating function ucna:update-specs() {
-
+    
     let $content := $ucna:spec//tei:content/tei:valList
     let $attDef := $ucna:spec//tei:attDef/tei:valList
     let $han := $ucna:unihan//tei:attDef/tei:valList/*
-
+    
     return
         (replace node $content
             with ucna:write-uniName-odd(),
